@@ -27,7 +27,7 @@ export default StyleSheet.create({
         "marginBottom": 0,
         "marginLeft": "auto"
     },
-    "containerTop": {
+    "containerUno": {
         "display": "inline-block",
         "width": 99 * vw,
         "height": 100,
@@ -62,7 +62,7 @@ export default StyleSheet.create({
     "menu li a": {
         "textDecoration": "none"
     },
-    "containerBottom": {
+    "containerDos": {
         "display": "block",
         "width": 99 * vw,
         "borderRadius": "0 25px"
@@ -184,6 +184,35 @@ export default StyleSheet.create({
         "fontSize": 13,
         "fontSizeAdjust": "auto"
     },
+    "map": {
+        "display": "flex",
+        "width": 99 * vw,
+        "height": 600,
+        "marginTop": 0,
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto",
+        "borderRadius": "0 25px",
+        "backgroundColor": "rgb(252, 250, 187)"
+    },
+    "mapOne": {
+        "justifyContent": "center",
+        "alignItems": "center"
+    },
+    "bottomContainer": {
+        "border": "solid 1px blue",
+        "display": "flex",
+        "width": 99 * vw,
+        "height": 300,
+        "borderRadius": "0 25px",
+        "backgroundColor": "rgb(187, 252, 209)"
+    },
+    "bottomContainerList": {
+        "border": "solid 1px blue",
+        "flexDirection": "column",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between"
+    },
     "footer": {
         "width": 99 * vw,
         "height": 100,
@@ -191,8 +220,8 @@ export default StyleSheet.create({
         "marginRight": "auto",
         "marginBottom": 0,
         "marginLeft": "auto",
-        "borderRadius": "25px 25px 0 0",
         "color": "white",
+        "borderRadius": "25px 25px 0 0",
         "backgroundColor": "rgb(31, 41, 133)",
         "textAlign": "center"
     }

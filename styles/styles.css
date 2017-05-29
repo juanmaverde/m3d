@@ -17,7 +17,7 @@ main {
   margin   : 0 auto;
 }
 
-.containerTop {
+.containerUno {
   display          : inline-block;
   width            : 99vw;
   height           : 100px;
@@ -51,7 +51,7 @@ main {
   text-decoration : none;
 }
 
-.containerBottom {
+.containerDos {
   display       : block;
   width         : 99vw;
   border-radius : 0 25px;
@@ -179,14 +179,48 @@ main {
 
 /* ------------------------------------------------------ */
 
+.map {
+  display          : flex;
+  width            : 99vw;
+  height           : 600px;
+  margin           : 0 auto;
+  border-radius    : 0 25px;
+  background-color : rgb(252, 250, 187);
+}
+
+.mapOne {
+   justify-content: center;
+   align-items: center;
+}
+
+/* ------------------------------------------------------ */
+
+.bottomContainer {
+   border: solid 1px blue;
+  display          : flex;
+  width            : 99vw;
+  height           : 300px;
+  border-radius    : 0 25px;
+  background-color : rgb(187, 252, 209);
+}
+
+.bottomContainerList {
+border: solid 1px blue;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+/* ------------------------------------------------------ */
+
 .footer {
   width            : 99vw;
   height           : 100px;
   margin           : 0 auto;
-  border-radius    : 25px 25px 0 0;
   color            : white;
+  border-radius    : 25px 25px 0 0;
   background-color : rgb(31, 41, 133);
-  text-align: center;
+  text-align       : center;
 }
 
 /* --- MOBILE ------------------------------------------- */
