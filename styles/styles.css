@@ -1,3 +1,208 @@
-* {
-   border: solid 0.5px blue;
+* {}
+
+body {
+  margin    : 10px;
+  font-size : 16px;
+}
+
+main {
+  background-color : rgb(235, 235, 235);
+}
+
+.container {
+  display  : inline-block;
+  position : relative;
+  width    : 99vw;
+  height   : 50vw;
+  margin   : 0 auto;
+}
+
+.containerTop {
+  display          : inline-block;
+  width            : 99vw;
+  height           : 100px;
+  border-radius    : 25px 0px;
+  background-color : rgba(29, 42, 221, 0.5);
+}
+
+.containerLogo {
+  position : absolute;
+  top      : 20px;
+  left     : 15px;
+}
+
+.menu {
+  position : absolute;
+  top      : 25px;
+  right    : 25px;
+  padding  : 0;
+}
+
+.menu li {
+  display          : inline-block;
+  margin-right     : 30px;
+  padding          : 5px 10px;
+  border-radius    : 3px;
+  background-color : rgb(23, 165, 222);
+  list-style       : none;
+}
+
+.menu li a {
+  text-decoration : none;
+}
+
+.containerBottom {
+  display       : block;
+  width         : 99vw;
+  border-radius : 0 25px;
+}
+
+.motto {
+  z-index    : 1;
+  position   : absolute;
+  top        : 200px;
+  width      : 99vw;
+  text-align : center;
+  font-size  : 1.5em;
+}
+
+.mainSearch {
+  z-index          : 1;
+  display          : block;
+  position         : absolute;
+  top              : 350px;
+  width            : 40vw;
+  margin           : 0 28vw;
+  padding          : 15px;
+  border           : solid blue 1px;
+  border-radius    : 3px;
+  background-color : rgba(255,255,255,0.75);
+  text-align       : center;
+}
+
+.banner {
+  z-index       : 0;
+  width         : 99vw;
+  border-radius : 0 25px;
+}
+
+/* ------------------------------------------------------ */
+
+.infographs {
+  display          : flex;
+  width            : 99vw;
+  height           : margin:0 auto;
+  border-radius    : 25px 0;
+  background-color : rgba(151, 207, 153, 0.63);
+  flex-direction   : row;
+  flex-wrap        : nowrap;
+  justify-content  : space-around;
+}
+
+.infographOne {
+  position      : relative;
+  width         : 300px;
+  height        : 300px;
+  margin        : 0 auto;
+  margin-top    : 10px;
+  margin-bottom : 10px;
+  overflow      : hidden;
+  border        : solid blue 1px;
+}
+
+.infographTwo {
+  position      : relative;
+  width         : 300px;
+  height        : 300px;
+  margin        : 0 auto;
+  margin-top    : 10px;
+  margin-bottom : 10px;
+  overflow      : hidden;
+  border        : solid blue 1px;
+}
+
+.infographThree {
+  position      : relative;
+  width         : 300px;
+  height        : 300px;
+  margin        : 0 auto;
+  margin-top    : 10px;
+  margin-bottom : 10px;
+  overflow      : hidden;
+  border        : solid blue 1px;
+}
+
+/* ------------------------------------------------------ */
+
+.userStories {
+  display          : flex;
+  width            : 99vw;
+  height           : 300px;
+  margin           : 0 auto;
+  border-radius    : 0 25px;
+  background-color : rgb(218, 161, 170);
+  flex-direction   : row;
+  flex-wrap        : nowrap;
+  justify-content  : space-around;
+}
+
+.userStoryOne {
+  width       : 30vw;
+  margin-left : 5px;
+  color       : grey;
+  overflow    : hidden;
+  text-align  : left;
+  text-indent : 5px;
+  font-size   : 13px;
+}
+
+.userStoryTwo {
+  width       : 30vw;
+  margin-left : 5px;
+  color       : grey;
+  overflow    : hidden;
+  text-align  : left;
+  text-indent : 5px;
+  font-size   : 13px;
+}
+
+.userStoryThree {
+  width            : 30vw;
+  margin-left      : 5px;
+  color            : grey;
+  overflow         : hidden;
+  text-align       : left;
+  text-indent      : 5px;
+  font-size        : 13px;
+  font-size-adjust : auto;
+}
+
+/* ------------------------------------------------------ */
+
+.footer {
+  width            : 99vw;
+  height           : 100px;
+  margin           : 0 auto;
+  border-radius    : 25px 25px 0 0;
+  color            : white;
+  background-color : rgb(31, 41, 133);
+  text-align: center;
+}
+
+/* --- MOBILE ------------------------------------------- */
+
+/* MEDIUM SIZE */
+
+@media (max-width: 900px) {
+  .containerTop {
+    background-color : green;
+  }
+}
+
+/* SMALL SIZE */
+
+@media (max-width: 450px) {
+  .containerTop {
+    background-color : red;
+  }
 }
