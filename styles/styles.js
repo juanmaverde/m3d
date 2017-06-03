@@ -56,7 +56,7 @@ export default StyleSheet.create({
         "paddingBottom": 5,
         "paddingLeft": 10,
         "borderRadius": 3,
-        "backgroundColor": "rgb(23, 165, 222)",
+        "backgroundColor": "rgb(219, 235, 241)",
         "listStyle": "none"
     },
     "menu li a": {
@@ -73,13 +73,13 @@ export default StyleSheet.create({
         "top": 200,
         "width": 99 * vw,
         "textAlign": "center",
-        "fontSize": 1.5
+        "fontSize": 2.5
     },
     "mainSearch": {
         "zIndex": 1,
         "display": "block",
         "position": "absolute",
-        "top": 350,
+        "top": 655,
         "width": 40 * vw,
         "marginTop": 0,
         "marginRight": 28 * vw,
@@ -105,43 +105,39 @@ export default StyleSheet.create({
         "height": "margin:0 auto",
         "borderRadius": "25px 0",
         "backgroundColor": "rgba(151, 207, 153, 0.63)",
+        "alignItems": "center",
         "flexDirection": "row",
-        "flexWrap": "nowrap",
-        "justifyContent": "space-around"
+        "flexWrap": "wrap",
+        "justifyContent": "space-between"
     },
     "infographOne": {
         "position": "relative",
         "width": 300,
         "height": 300,
-        "marginTop": 10,
+        "marginTop": 35,
         "marginRight": "auto",
-        "marginBottom": 10,
-        "marginLeft": "auto",
-        "overflow": "hidden",
-        "border": "solid blue 1px"
+        "marginBottom": 0,
+        "marginLeft": "auto"
     },
     "infographTwo": {
         "position": "relative",
         "width": 300,
         "height": 300,
-        "marginTop": 10,
+        "marginTop": 35,
         "marginRight": "auto",
-        "marginBottom": 10,
-        "marginLeft": "auto",
-        "overflow": "hidden",
-        "border": "solid blue 1px"
+        "marginBottom": 0,
+        "marginLeft": "auto"
     },
     "infographThree": {
         "position": "relative",
         "width": 300,
         "height": 300,
-        "marginTop": 10,
+        "marginTop": 35,
         "marginRight": "auto",
-        "marginBottom": 10,
-        "marginLeft": "auto",
-        "overflow": "hidden",
-        "border": "solid blue 1px"
+        "marginBottom": 0,
+        "marginLeft": "auto"
     },
+    "infoGraphImg": {},
     "userStories": {
         "display": "flex",
         "width": 99 * vw,
@@ -163,7 +159,7 @@ export default StyleSheet.create({
         "overflow": "hidden",
         "textAlign": "left",
         "textIndent": 5,
-        "fontSize": 13
+        "fontSize": 23
     },
     "userStoryTwo": {
         "width": 30 * vw,
@@ -172,7 +168,7 @@ export default StyleSheet.create({
         "overflow": "hidden",
         "textAlign": "left",
         "textIndent": 5,
-        "fontSize": 13
+        "fontSize": 23
     },
     "userStoryThree": {
         "width": 30 * vw,
@@ -181,13 +177,25 @@ export default StyleSheet.create({
         "overflow": "hidden",
         "textAlign": "left",
         "textIndent": 5,
-        "fontSize": 13,
+        "fontSize": 23,
         "fontSizeAdjust": "auto"
     },
+    "story": {
+        "textAlign": "justify",
+        "lineHeight": "150%"
+    },
+    "name": {
+        "textAlign": "right",
+        "fontStyle": "italic"
+    },
+    "stars": {
+        "color": "rgb(255, 255, 255)",
+        "textAlign": "right",
+        "fontSize": 43
+    },
     "map": {
-        "display": "flex",
         "width": 99 * vw,
-        "height": 600,
+        "height": 500,
         "marginTop": 0,
         "marginRight": "auto",
         "marginBottom": 0,
@@ -196,22 +204,28 @@ export default StyleSheet.create({
         "backgroundColor": "rgb(252, 250, 187)"
     },
     "mapOne": {
-        "justifyContent": "center",
-        "alignItems": "center"
+        "display": "flex",
+        "justifyContent": "center"
     },
     "bottomContainer": {
-        "border": "solid 1px blue",
-        "display": "flex",
         "width": 99 * vw,
-        "height": 300,
+        "height": 200,
         "borderRadius": "0 25px",
         "backgroundColor": "rgb(187, 252, 209)"
     },
     "bottomContainerList": {
-        "border": "solid 1px blue",
-        "flexDirection": "column",
-        "flexWrap": "wrap",
+        "display": "flex"
+    },
+    "bottomList": {
+        "alignItems": "center",
+        "flex": "auto",
         "justifyContent": "space-between"
+    },
+    "li": {
+        "alignItems": "center",
+        "justifyContent": "space-between",
+        "lineHeight": "210%",
+        "listStyleType": "none"
     },
     "footer": {
         "width": 99 * vw,
@@ -224,5 +238,9 @@ export default StyleSheet.create({
         "borderRadius": "25px 25px 0 0",
         "backgroundColor": "rgb(31, 41, 133)",
         "textAlign": "center"
+    },
+    "footer p": {
+        "position": "relative",
+        "top": 50
     }
 });
