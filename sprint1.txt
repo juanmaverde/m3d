@@ -1,3 +1,12 @@
+Proyecto M3D
+
+Fernanda Monge
+Axel Lubel
+Juan Manuel Verde
+
+GitHub ID:
+https://github.com/juanmaverde/m3d.git
+
 SPRINT ɳ= 1 ➞ 2/6/17
 
 -El cliente pide tener una home del sitio que presente la idea del sitio en sí de forma moderna y elegante.
