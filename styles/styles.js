@@ -8,14 +8,73 @@ const {width, height, scale} = Dimensions.get("window"),
 export default StyleSheet.create({
     "*": {},
     "body": {
-        "marginTop": 10,
-        "marginRight": 10,
-        "marginBottom": 10,
-        "marginLeft": 10,
+        "marginLeft": 0,
         "fontSize": 16
     },
     "main": {
-        "backgroundColor": "rgb(235, 235, 235)"
+        "marginTop": 500,
+        "backgroundColor": "rgb(255, 255, 255, .05)"
+    },
+    "largeHeaderContainer": {
+        "display": "flex",
+        "width": 99.5 * vw,
+        "height": 75,
+        "flexFlow": "row nowrap",
+        "justifyContent": "space-around"
+    },
+    "logoContainer": {
+        "display": "flex",
+        "width": 10 * vw,
+        "flexFlow": "nowrap row",
+        "justifyContent": "center"
+    },
+    "logo": {},
+    "secondaryMenuContainer": {},
+    "secondaryMenu": {
+        "display": "flex",
+        "width": 55 * vw,
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "flexFlow": "row nowrap",
+        "justifyContent": "flex-start"
+    },
+    "secondaryMenu li": {
+        "marginLeft": 30
+    },
+    "secondaryMenu li a": {
+        "color": "rgb(60, 60, 60)",
+        "textDecoration": "none",
+        "fontFamily": "'Roboto Condensed', sans-serif"
+    },
+    "mainMenuContainer": {
+        "width": 30 * vw
+    },
+    "mainMenu": {
+        "display": "flex",
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "flexFlow": "row nowrap",
+        "justifyContent": "flex-end"
+    },
+    "mainMenu li": {
+        "marginRight": 20,
+        "display": "inline"
+    },
+    "mainMenu li a": {
+        "color": "rgb(60, 60, 60)",
+        "textDecoration": "none",
+        "fontFamily": "'Roboto Condensed', sans-serif",
+        "paddingTop": 5,
+        "paddingRight": 5,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "borderRadius": 3,
+        "border": "solid 0.5px rgb(60, 60, 60)",
+        "backgroundColor": "rgb(238, 238, 238)"
     },
     "container": {
         "display": "inline-block",
@@ -26,27 +85,6 @@ export default StyleSheet.create({
         "marginRight": "auto",
         "marginBottom": 0,
         "marginLeft": "auto"
-    },
-    "containerUno": {
-        "display": "inline-block",
-        "width": 99 * vw,
-        "height": 100,
-        "borderRadius": "25px 0px",
-        "backgroundColor": "rgba(29, 42, 221, 0.5)"
-    },
-    "containerLogo": {
-        "position": "absolute",
-        "top": 20,
-        "left": 15
-    },
-    "menu": {
-        "position": "absolute",
-        "top": 25,
-        "right": 25,
-        "paddingTop": 0,
-        "paddingRight": 0,
-        "paddingBottom": 0,
-        "paddingLeft": 0
     },
     "menu li": {
         "display": "inline-block",
@@ -67,7 +105,14 @@ export default StyleSheet.create({
         "width": 99 * vw,
         "borderRadius": "0 25px"
     },
+    "containerDos span": {
+        "color": "red",
+        "fontSize": 1.5,
+        "verticalAlign": "middle"
+    },
     "motto": {
+        "fontFamily": "'Bubbler One', sans-serif",
+        "color": "rgb(0, 7, 155)",
         "zIndex": 1,
         "position": "absolute",
         "top": 200,
