@@ -3,23 +3,22 @@
 * {}
 
 body {
-  margin-left : 0;
-  font-size   : 16px;
+  margin    : 0;
+  font-size : 16px;
 }
 
-main {
-  margin-top       : 500px;
-  background-color : rgb(255, 255, 255, .05);
-}
+main {}
 
 /* ---------- Header styles ---------- */
 
 .largeHeaderContainer {
-  display          : flex;
-  width            : 99.5vw;
-  height           : 75px;
-  flex-flow        : row nowrap;
-  justify-content  : space-around;
+  z-index         : 100;
+  display         : flex;
+  width           : 99.8vw;
+  height          : 75px;
+  flex-flow       : row nowrap;
+  justify-content : space-around;
+  /* background-color : rgba(226, 226, 226, 0.55); */
 }
 
 .logoContainer {
@@ -31,293 +30,205 @@ main {
 
 .logo {}
 
-.secondaryMenuContainer {
-}
+.secondaryMenuContainer {}
 
 .secondaryMenu {
   display         : flex;
   width           : 55vw;
+  margin-top      : 25px;
   padding         : 0;
   flex-flow       : row nowrap;
   justify-content : flex-start;
 }
 
 .secondaryMenu li {
-  margin-left : 30px;
+  margin-left     : 30px;
+  list-style-type : none;
 }
 
 .secondaryMenu li a {
   color           : rgb(60, 60, 60);
   text-decoration : none;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family     : 'Roboto Condensed',
+                    sans-serif;
 }
 
 .mainMenuContainer {
-  width  : 30vw;
+  width : 30vw;
 }
 
 .mainMenu {
   display         : flex;
+  margin-top      : 25px;
   padding         : 0;
   flex-flow       : row nowrap;
   justify-content : flex-end;
 }
 
 .mainMenu li {
+  display      : inline;
   margin-right : 20px;
-  display: inline;
 }
 
 .mainMenu li a {
-  color           : rgb(60, 60, 60);
-  text-decoration : none;
-  font-family: 'Roboto Condensed', sans-serif;
-  padding: 5px;
-  border-radius: 3px;
-  border: solid 0.5px rgb(60, 60, 60);
-  background-color: rgb(238, 238, 238);
+  padding          : 5px;
+  color            : rgb(60, 60, 60);
+  border           : solid 0.5px rgb(60, 60, 60);
+  border-radius    : 9px;
+  background-color : rgb(238, 238, 238);
+  box-shadow       : 0 2px 0 rgba(19,25,40,0.1);
+  text-decoration  : none;
+  font-family      : 'Roboto Condensed',
+                     sans-serif;
+}
+
+.mainMenu li a.mainMenuFavorite {
+  padding          : 7px;
+  color            : white;
+  border-color     : #ed565c;
+  background-color : #ed565c;
+  box-shadow       : 3px 3px 3px rgba(19,25,40,0.2);
 }
 
 /* ---------- mainScreen styles ---------- */
 
-.container {
-  display  : inline-block;
+.mainScreenContainer {
   position : relative;
-  width    : 99vw;
-  height   : 50vw;
-  margin   : 0 auto;
+  width    : 99.8vw;
+  height   : 425px;
+  /* background-color : rgba(226, 226, 226, 0.55); */
 }
 
-.menu li {
-  display          : inline-block;
-  margin-right     : 30px;
-  padding          : 5px 10px;
-  border-radius    : 3px;
-  background-color : rgb(219, 235, 241);
-  list-style       : none;
+.mainScreenContainer h1 {
+  margin      : 0;
+  padding-top : 10vh;
+  color       : rgb(88, 88, 88);
+  text-align  : center;
+  font-family : 'Quicksand',
+                sans-serif;
+  font-size   : 3.5em;
 }
 
-.menu li a {
-  text-decoration : none;
+.mainScreenContainer h1 strong {
+  color : rgb(88, 88, 88);
 }
 
-.containerDos {
-  display       : block;
-  width         : 99vw;
-  border-radius : 0 25px;
+.mainScreenContainer h1 strong span {
+  color          : rgb(20, 13, 101);
+  vertical-align : middle;
+  font-size      : 1.5em;
 }
 
-.containerDos span {
-   color: red;
-   font-size: 1.5em;
-   vertical-align: middle;
-
+.mainScreenContainer h2 {
+  color       : #52baaf;
+  text-align  : center;
+  font-family : 'Bubbler One',
+                sans-serif;
+  font-size   : 2em;
 }
 
-.motto {
-   font-family: 'Bubbler One', sans-serif;
-   color: rgb(0, 7, 155);
-  z-index    : 1;
-  position   : absolute;
-  top        : 200px;
-  width      : 99vw;
-  text-align : center;
-  font-size  : 2.5em;
+.mottoContainer {
+  width  : 90vw;
+  height : 250px;
+  margin : 0 auto;
 }
 
-.mainSearch {
-  z-index          : 1;
-  display          : block;
-  position         : absolute;
-  top              : 655px;
-  width            : 40vw;
-  margin           : 0 28vw;
-  padding          : 15px;
-  border           : solid blue 1px;
-  border-radius    : 3px;
-  background-color : rgba(255,255,255,0.75);
-  text-align       : center;
+.primMotto {
+  color          : #52baaf;
+  vertical-align : middle;
+  font-size      : 1.1em;
 }
 
-.banner {
-  z-index       : 0;
-  width         : 99vw;
-  border-radius : 0 25px;
+.secondMotto {
+  color          : #3b2786;
+  vertical-align : top;
+  font-family    : 'Bubbler One',
+                   sans-serif;
+  font-size      : 1.5em;
+}
+
+.tercMotto {
+  color : #1686ea;
+}
+
+.searchFieldContainer {
+  width  : 50vw;
+  height : 15vh;
+  margin : 0 auto;
+}
+
+.searchField {
+  box-sizing          : border-box;
+  width               : 50vw;
+  margin-top          : 30px;
+  padding             : 12px 20px 12px 20px;
+  border              : 2px solid #ccc;
+  border-radius       : 4px;
+  background-color    : white;
+  background-repeat   : no-repeat;
+  background-position : 10px 10px;
+  box-shadow          : 7px 7px 7px rgba(19,25,40,0.2);
+  font-size           : 15px;
 }
 
 /* ------------------------------------------------------ */
 
-.infographs {
+.infogContainer {
   display          : flex;
-  width            : 99vw;
-  height           : margin:0 auto;
-  border-radius    : 25px 0;
-  background-color : rgba(151, 207, 153, 0.63);
+  width            : 99.9vw;
+  height           : 55vh;
+  margin-top       : 50px;
+  background-color : RGBA(188, 189, 189, .35);
   align-items      : center;
-  flex-direction   : row;
   flex-wrap        : wrap;
-  justify-content  : space-between;
-}
-
-.infographOne {
-  position   : relative;
-  width      : 300px;
-  height     : 300px;
-  margin     : 0 auto;
-  margin-top : 35px;
-}
-
-.infographTwo {
-  position   : relative;
-  width      : 300px;
-  height     : 300px;
-  margin     : 0 auto;
-  margin-top : 35px;
-}
-
-.infographThree {
-  position   : relative;
-  width      : 300px;
-  height     : 300px;
-  margin     : 0 auto;
-  margin-top : 35px;
-}
-
-.infoGraphImg {}
-
-/* ------------------------------------------------------ */
-
-.userStories {
-  display          : flex;
-  width            : 99vw;
-  height           : 300px;
-  margin           : 0 auto;
-  border-radius    : 0 25px;
-  background-color : rgb(218, 161, 170);
-  flex-direction   : row;
-  flex-wrap        : nowrap;
   justify-content  : space-around;
 }
 
-.userStoryOne {
-  width       : 30vw;
-  margin-left : 5px;
-  color       : grey;
-  overflow    : hidden;
-  text-align  : left;
-  text-indent : 5px;
-  font-size   : 23px;
+.infog-1 {
+  padding          : 10px 25px;
+  border-radius    : 15px;
+  background-color : RGBA(254, 254, 254, 1.00);
 }
 
-.userStoryTwo {
-  width       : 30vw;
-  margin-left : 5px;
-  color       : grey;
-  overflow    : hidden;
-  text-align  : left;
-  text-indent : 5px;
-  font-size   : 23px;
+.infog-2 {
+  padding          : 10px 25px;
+  border-radius    : 15px;
+  background-color : RGBA(178, 222, 218, 1.00);
 }
 
-.userStoryThree {
-  width            : 30vw;
-  margin-left      : 5px;
-  color            : grey;
-  overflow         : hidden;
-  text-align       : left;
-  text-indent      : 5px;
-  font-size        : 23px;
-  font-size-adjust : auto;
+.infog-3 {
+  padding          : 10px 25px;
+  border-radius    : 15px;
+  background-color : RGBA(188, 189, 189, 1.00);
 }
 
-.story {
-  text-align  : justify;
-  line-height : 150%;
+.infog-4 {
+  padding          : 10px 25px;
+  border-radius    : 15px;
+  background-color : RGBA(237, 86, 92, 1.00);
 }
 
-.name {
-  text-align : right;
-  font-style : italic;
+.infoP {
+font-size: 1.1em;
+font-family    : 'Bubbler One',
+                 sans-serif;
+text-align: center;
 }
 
-.stars {
-  color      : rgb(255, 255, 255);
-  text-align : right;
-  font-size  : 43px;
+.infoDescContainer {
+   height: 150px;
+   width: 99.9vw;
+   display: flex;
+   flex-flow: nowrap row;
+   text-align: center;
+   flex-wrap: wrap;
+   align-items: baseline;
+   justify-content: space-around;
 }
 
-/* ------------------------------------------------------ */
+.infoDesc {
+   width: 225px;
+   font-family    : 'Bubbler One',
+                    sans-serif;
 
-.map {
-  width            : 99vw;
-  height           : 500px;
-  margin           : 0 auto;
-  border-radius    : 0 25px;
-  background-color : rgb(252, 250, 187);
-}
-
-.mapOne {
-  display         : flex;
-  justify-content : center;
-}
-
-/* ------------------------------------------------------ */
-
-.bottomContainer {
-  width            : 99vw;
-  height           : 200px;
-  border-radius    : 0 25px;
-  background-color : rgb(187, 252, 209);
-}
-
-.bottomContainerList {
-  display : flex;
-}
-
-.bottomList {
-  align-items     : center;
-  flex            : auto;
-  justify-content : space-between;
-}
-
-li {
-  align-items     : center;
-  justify-content : space-between;
-  line-height     : 210%;
-  list-style-type : none;
-}
-
-/* ------------------------------------------------------ */
-
-.footer {
-  width            : 99vw;
-  height           : 100px;
-  margin           : 0 auto;
-  color            : white;
-  border-radius    : 25px 25px 0 0;
-  background-color : rgb(31, 41, 133);
-  text-align       : center;
-}
-
-.footer p {
-  position : relative;
-  top      : 50px;
-}
-
-/* --- MOBILE ------------------------------------------- */
-
-/* MEDIUM SIZE */
-
-@media (max-width: 900px) {
-  .containerTop {
-    background-color : green;
-  }
-}
-
-/* SMALL SIZE */
-
-@media (max-width: 450px) {
-  .containerTop {
-    background-color : red;
-  }
 }
