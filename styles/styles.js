@@ -94,7 +94,7 @@ export default StyleSheet.create({
     "mainScreenContainer": {
         "position": "relative",
         "width": 99.8 * vw,
-        "height": 425
+        "height": 350
     },
     "mainScreenContainer h1": {
         "marginTop": 0,
@@ -210,22 +210,164 @@ export default StyleSheet.create({
         "backgroundColor": "RGBA(237, 86, 92, 1.00)"
     },
     "infoP": {
-        "fontSize": 1.1,
-        "fontFamily": "'Bubbler One',                 sans-serif",
-        "textAlign": "center"
+        "textAlign": "center",
+        "fontFamily": "'Bubbler One',                sans-serif",
+        "fontSize": 1.1
     },
     "infoDescContainer": {
-        "height": 150,
-        "width": 99.9 * vw,
         "display": "flex",
-        "flexFlow": "nowrap row",
+        "width": 99.9 * vw,
+        "height": 150,
         "textAlign": "center",
-        "flexWrap": "wrap",
         "alignItems": "baseline",
+        "flexFlow": "nowrap row",
+        "flexWrap": "wrap",
         "justifyContent": "space-around"
     },
     "infoDesc": {
         "width": 225,
-        "fontFamily": "'Bubbler One',                    sans-serif"
+        "fontFamily": "'Bubbler One',                sans-serif"
+    },
+    "footerContainer": {
+        "width": 99.9 * vw,
+        "height": 30 * vh,
+        "backgroundColor": "#05407c"
+    },
+    "mainContactFormContainer": {
+        "width": 99.9 * vw,
+        "height": 550,
+        "backgroundColor": "#ebeded"
+    },
+    "FAQsLinkContainer": {
+        "position": "relative",
+        "top": 50,
+        "width": 600,
+        "height": 50,
+        "marginTop": 0,
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto",
+        "textAlign": "center",
+        "fontFamily": "'Quicksand',                sans-serif"
+    },
+    "FAQsLinkContainer a": {
+        "color": "#757575",
+        "textDecoration": "none",
+        "fontSize": 1.2
+    },
+    "FAQsLinkContainer a span": {
+        "color": "#ed565c",
+        "verticalAlign": "baseline",
+        "fontSize": 1.25
+    },
+    "contactFormContainer": {
+        "position": "relative",
+        "top": 50,
+        "width": 50 * vw,
+        "height": 50 * vh,
+        "marginTop": 0,
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto"
+    },
+    "contactFormContainerParagraph": {
+        "marginLeft": 20,
+        "color": "#757575",
+        "fontFamily": "'Quicksand',                sans-serif"
+    },
+    "contactForm": {
+        "display": "flex",
+        "alignItems": "center",
+        "flexFlow": "nowrap column"
+    },
+    "topicDropDown": {
+        "width": 20 * vw,
+        "marginBottom": 15
+    },
+    "textArea": {
+        "width": 45 * vw,
+        "marginBottom": 25
+    },
+    "submitButton": {
+        "marginBottom": 20
+    },
+    "phoneContact": {
+        "marginBottom": 15,
+        "textDecoration": "none"
+    },
+    "phoneContact span": {
+        "color": "#757575",
+        "textDecoration": "none"
+    },
+    "emailContact": {
+        "color": "#757575",
+        "textDecoration": "none"
+    },
+    "socialNetworks": {
+        "textAlign": "center"
+    },
+    "socialNetworksIcons": {
+        "display": "flex",
+        "marginTop": 0,
+        "marginRight": 100,
+        "marginBottom": 0,
+        "marginLeft": 100,
+        "alignItems": "center",
+        "flexFlow": "nowrap row",
+        "justifyContent": "space-around"
+    },
+    "facebookLink": {},
+    "twitterLink": {},
+    "dashboardContainer": {
+        "display": "flex",
+        "width": 60 * vw,
+        "height": 300,
+        "marginTop": 0,
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto",
+        "backgroundColor": "rgb(182, 190, 194)",
+        "alignItems": "center",
+        "flexFlow": "row wrap",
+        "justifyContent": "space-around"
+    },
+    "aboutUs": {
+        "width": 150,
+        "height": 150,
+        "borderRadius": 5,
+        "backgroundColor": "#ed565c"
+    },
+    "aboutUs p": {
+        "textAlign": "center",
+        "fontFamily": "'Quicksand',                sans-serif"
+    },
+    "dataPrivacy": {
+        "width": 150,
+        "height": 150,
+        "borderRadius": 5,
+        "backgroundColor": "#ed565c",
+        "textAlign": "center",
+        "fontFamily": "'Quicksand',                sans-serif"
+    },
+    "verifiedProf": {
+        "width": 150,
+        "height": 150,
+        "borderRadius": 5,
+        "backgroundColor": "#ed565c",
+        "textAlign": "center",
+        "fontFamily": "'Quicksand',                sans-serif"
+    },
+    "frequentQuestions": {
+        "fontFamily": "'Quicksand',                sans-serif",
+        "color": "#ed565c"
+    },
+    "questionsAndAnswers": {
+        "fontFamily": "'Quicksand',                sans-serif"
+    },
+    "questionsAndAnswers ul li": {
+        "color": "#05407c"
+    },
+    "questionsAndAnswers ul p": {
+        "color": "#757575"
     }
 });

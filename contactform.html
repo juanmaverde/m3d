@@ -2,55 +2,80 @@
 <html lang="es">
 
 <head>
-   <meta charset="UTF-8">
+   <meta charset="utf-8">
    <link rel="stylesheet" href="styles/styles.css">
+   <link rel="stylesheet" href="bootstrap.css">
+   <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Quicksand|Roboto+Condensed" rel="stylesheet">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-   <title>Ingreso / Registro</title>
+   <title> Contáctenos </title>
 </head>
 
 <body>
-   <section class="topContainer">
-      <header class="containerUno">
-         <img class="containerLogo" src="imgs/logoFirstDraft.png" alt="logo M3D" width="100px">
-         <ul class="menu">
-            <li><a href="loginRegister.html">Ingreso / Registro</a></li>
-            <li><a href="contactForm.html">Contacto</a></li>
-            <li><a href="faqs.html">FAQ's</a></li>
-         </ul>
+   <div>
+      <header class="largeHeaderContainer">
+         <div class="logoContainer">
+            <a href="index.html"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
+         </div>
+         <div class="secondaryMenuContainer">
+            <nav>
+               <ul class="secondaryMenu">
+                  <li><a href="#">STATS</a></li>
+                  <li><a href="#">USER STORIES</a></li>
+                  <li><a href="contactForm.html">CONTACTO</a></li>
+                  <li><a href="faqs.html">FAQ's</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div class="mainMenuContainer">
+            <nav>
+               <ul class="mainMenu">
+                  <li><a href="loginRegister.html">CREAR CUENTA</a></li>
+                  <li><a href="#" class="mainMenuFavorite">INGRESO</a></li>
+               </ul>
+            </nav>
+         </div>
       </header>
-   </section>
+   </div>
    <main>
-      <div class="">
-         <span>Necesita ayuda? Visite el sitio de
-            <a href="faqs.html"> preguntas frecuentes</a>
-            .
-         </span>
-      </div>
-      <div class="">
-         <h4>Conáctenos:</h4>
-         <section>
-            <p>Mediante nuestras redes sociales</p>
-            <ul>
-               <li>Facebook</li>
-               <li>Twitter</li>
-               <li>WhatsApp</li>
-            </ul>
-         </section>
-         <p>Vía telefónica</p>
-         <p>+54 9 123 456 7890</p>
-         <section>
-            <p>Mediante email</p>
-            <span>Enviar email</span>
-         </section>
-         <section>
-            <p>o déjenos sus comentarios aquí:</p>
-            <textarea name="name" rows="8" cols="80"></textarea>
-         </section>
+      <div class="mainContactFormContainer">
+         <div class="FAQsLinkContainer">
+            <a href="faqs.html">Tiene preguntas? Visite el apartado de <span>preguntas frecuentes</span></a>
+         </div>
+         <div class="contactFormContainer">
+            <p class="contactFormContainerParagraph">Utilice el formulario para hacer preguntas, comentarios o reclamos:</p>
+            <form class="contactForm" action="contact.php" method="post">
+               <!-- TODO => redireccionamiento a archivo backEnd -->
+               <select class="topicDropDown" name="topicDropDown">
+                  <option value="question">Pregunta</option>
+                  <option value="claim">Reclamo</option>
+                  <option value="comment">Comentario</option>
+               </select>
+               <textarea class="textArea" name="comment" rows="8" cols="80"></textarea>
+               <input class="submitButton" type="submit" name="submit" value="enviar">
+               <a href="tel:12-3456-7890" class="phoneContact"> <span>Llame por teléfono al:</span> 12-3456-7890</a>
+               <a href="mailto:contacto@m3d.website?Subject=Contact" class="emailContact"><span>O envíenos un correo electrónico:   </span><img src="imgs/gmailIcon.png" alt="gmail icon" width="55px"></a>
+            </form>
+            <div class="socialNetworks">
+               <p>Síganos en nuestras redes sociales</p>
+               <div class="socialNetworksIcons">
+                  <div class="facebookLink">
+                     <a href="http://www.facebook.com">
+                     <img src="imgs/facebookIcon.png" alt="facebook logo" width="55px">
+                  </a>
+                  </div>
+                  <div class="twitterLink">
+                     <a href="http://www.twitter.com">
+                     <img src="imgs/twitterIcon.png" alt="twitter logo" width="55px">
+                  </a>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
    </main>
-   <footer class="footer">
-      <p> M3D - todos los derechos reservados </p>
-   </footer>
+   <div class="footerContainer">
+      <footer></footer>
+   </div>
 </body>
 
 </html>

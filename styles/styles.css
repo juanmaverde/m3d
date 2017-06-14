@@ -95,7 +95,7 @@ main {}
 .mainScreenContainer {
   position : relative;
   width    : 99.8vw;
-  height   : 425px;
+  height   : 350px;
   /* background-color : rgba(226, 226, 226, 0.55); */
 }
 
@@ -209,26 +209,204 @@ main {}
 }
 
 .infoP {
-font-size: 1.1em;
-font-family    : 'Bubbler One',
-                 sans-serif;
-text-align: center;
+  text-align  : center;
+  font-family : 'Bubbler One',
+                sans-serif;
+  font-size   : 1.1em;
 }
 
 .infoDescContainer {
-   height: 150px;
-   width: 99.9vw;
-   display: flex;
-   flex-flow: nowrap row;
-   text-align: center;
-   flex-wrap: wrap;
-   align-items: baseline;
-   justify-content: space-around;
+  display         : flex;
+  width           : 99.9vw;
+  height          : 150px;
+  text-align      : center;
+  align-items     : baseline;
+  flex-flow       : nowrap row;
+  flex-wrap       : wrap;
+  justify-content : space-around;
 }
 
 .infoDesc {
-   width: 225px;
-   font-family    : 'Bubbler One',
-                    sans-serif;
-
+  width       : 225px;
+  font-family : 'Bubbler One',
+                sans-serif;
 }
+
+.footerContainer {
+  width            : 99.9vw;
+  height           : 30vh;
+  background-color : #05407c;
+}
+
+/* --------------------- CONTACT FORM STYLES ----------------------------------- */
+
+.mainContactFormContainer {
+  width            : 99.9vw;
+  height           : 65vh;
+  height           : 550px;
+  background-color : #ebeded;
+}
+
+.FAQsLinkContainer {
+  position    : relative;
+  top         : 50px;
+  width       : 600px;
+  height      : 50px;
+  margin      : 0 auto;
+  text-align  : center;
+  font-family : 'Quicksand',
+                sans-serif;
+}
+
+.FAQsLinkContainer a {
+  color           : #757575;
+  text-decoration : none;
+  font-size       : 1.2em;
+}
+
+.FAQsLinkContainer a span {
+  color          : #ed565c;
+  vertical-align : baseline;
+  font-size      : 1.25em;
+}
+
+.contactFormContainer {
+  position : relative;
+  top      : 50px;
+  width    : 50vw;
+  height   : 50vh;
+  margin   : 0 auto;
+}
+
+.contactFormContainerParagraph {
+  margin-left : 20px;
+  color       : #757575;
+  font-family : 'Quicksand',
+                sans-serif;
+}
+
+.contactForm {
+  display     : flex;
+  align-items : center;
+  flex-flow   : nowrap column;
+}
+
+.topicDropDown {
+  width         : 20vw;
+  margin-bottom : 15px;
+}
+
+.textArea {
+  width         : 45vw;
+  margin-bottom : 25px;
+}
+
+.submitButton {
+  margin-bottom : 20px;
+}
+
+.phoneContact {
+  margin-bottom   : 15px;
+  text-decoration : none;
+}
+
+.phoneContact span {
+  color           : #757575;
+  text-decoration : none;
+}
+
+.emailContact {
+  color           : #757575;
+  text-decoration : none;
+}
+
+.socialNetworks {
+  text-align : center;
+}
+
+.socialNetworksIcons {
+  display         : flex;
+  margin          : 0 100px;
+  align-items     : center;
+  flex-flow       : nowrap row;
+  justify-content : space-around;
+}
+
+.facebookLink {}
+
+.twitterLink {}
+
+/* --------------------- FAQs STYLES ----------------------------------- */
+
+.dashboardContainer {
+  display          : flex;
+  width            : 60vw;
+  height           : 300px;
+  margin           : 0 auto;
+  background-color : rgb(182, 190, 194);
+  align-items      : center;
+  flex-flow        : row wrap;
+  justify-content  : space-around;
+}
+
+.aboutUs {
+  width            : 150px;
+  height           : 150px;
+  border-radius    : 5px;
+  background-color : #ed565c;
+}
+
+.aboutUs p {
+  text-align  : center;
+  font-family : 'Quicksand',
+                sans-serif;
+}
+
+.dataPrivacy {
+  width            : 150px;
+  height           : 150px;
+  border-radius    : 5px;
+  background-color : #ed565c;
+}
+
+.dataPrivacy {
+  text-align  : center;
+  font-family : 'Quicksand',
+                sans-serif;
+}
+
+.verifiedProf {
+  width            : 150px;
+  height           : 150px;
+  border-radius    : 5px;
+  background-color : #ed565c;
+}
+
+.verifiedProf {
+  text-align  : center;
+  font-family : 'Quicksand',
+                sans-serif;
+}
+
+.frequentQuestions {
+   font-family : 'Quicksand',
+                sans-serif;
+color: #ed565c;
+}
+
+.questionsAndAnswers {
+  font-family : 'Quicksand',
+                sans-serif;
+}
+
+.questionsAndAnswers ul li {
+  color : #05407c;
+}
+
+.questionsAndAnswers ul p {
+  color : #757575;
+}
+
+/* --------------------- FOOTER FORM STYLES ----------------------------------- */
+
+.footerContainer {}

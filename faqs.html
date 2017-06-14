@@ -2,52 +2,73 @@
 <html lang="es">
 
 <head>
-   <meta charset="UTF-8">
+   <meta charset="utf-8">
    <link rel="stylesheet" href="styles/styles.css">
+   <link rel="stylesheet" href="bootstrap.css">
+   <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Quicksand|Roboto+Condensed" rel="stylesheet">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-   <title>Preguntas frecuentes</title>
+   <title> Preguntas frecuentes </title>
 </head>
 
 <body>
-   <section class="topContainer">
-      <header class="containerUno">
-         <img class="containerLogo" src="imgs/logoFirstDraft.png" alt="logo M3D" width="100px">
-         <ul class="menu">
-            <li><a href="loginRegister.html">Ingreso / Registro</a></li>
-            <li><a href="contactForm.html">Contacto</a></li>
-            <li><a href="faqs.html">FAQ's</a></li>
-         </ul>
+   <div>
+      <header class="largeHeaderContainer">
+         <div class="logoContainer">
+            <a href="index.html"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
+         </div>
+         <div class="secondaryMenuContainer">
+            <nav>
+               <ul class="secondaryMenu">
+                  <li><a href="#">STATS</a></li>
+                  <li><a href="#">USER STORIES</a></li>
+                  <li><a href="contactForm.html">CONTACTO</a></li>
+                  <li><a href="faqs.html">FAQ's</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div class="mainMenuContainer">
+            <nav>
+               <ul class="mainMenu">
+                  <li><a href="loginRegister.html">CREAR CUENTA</a></li>
+                  <li><a href="#" class="mainMenuFavorite">INGRESO</a></li>
+               </ul>
+            </nav>
+         </div>
       </header>
+   </div>
+   <div class="dashboardContainer">
+      <div class="aboutUs">
+         <p>Acerca nuestro <br>(icon)</p>
+      </div>
+      <div class="dataPrivacy">
+         <p>Datos & Privacidad <br>(icon)</p>
+      </div>
+      <div class="verifiedProf">
+         <p>Profesionales verificados <br>(icon)</p>
+      </div>
+   </div>
+   <h3 class="frequentQuestions">Preguntas Frecuentes</h3>
+
+   <section class="questionsAndAnswers">
+      <ul>
+         <li> ¿Qué es M3D? </li>
+         <p> Se trata de una red de profesionales de la salud y de gente que necesita de servicios médicos cuyo objetivo es optimizar la distribución de recursos y reducir las asimetrías de información existente.</p>
+         <li> ¿Por qué sumarme si soy un particular? </li>
+         <p> Porque podrás encontrar información respecto de médicos por especialidad, su disponibilidad horaria, encontrar turnos disponibles de acuerdo a horario y a tu ubicación y leer recomendaciones y comentarios sobre los distintos profesionales de
+            la red.</p>
+         <li> ¿Por qué sumarme si soy un profesional de la salud? </li>
+         <p> Porque te permite posicionarte como un profesional de vanguardia y transparente y acceder a pacientes que están buscando un turno y que confían en las recomendaciones de la comunidad.</p>
+         <li> ¿Tiene costo el servicio? </li>
+         <p> Participar como miembro de la comunidad no tiene ningún costo. Si como profesional de la salud querés crear un "Perfil Destacado" y que tu perfil esté mejor posicionado podés contratar el Plan Premium por tan sólo AR$ 50 (pesos argentinos) por
+            mes.</p>
+         <li> ¿Me puedo dar de baja? </li>
+         <p> Cuando quieras dejar de usar el servicio podés darte de baja y eliminar, modificar o rectificar toda tu información alojada en la plataforma.</p>
+      </ul>
    </section>
-    <header>
-        <h1>Preguntas Frecuentes</h1>
-    </header>
 
-    <section>
-        <article>
-            <ul>
-                <li> ¿Qué es M3D? </li>
-                <p> Se trata de una red de profesionales de la salud y de gente que necesita de servicios médicos cuyo objetivo es optimizar la distribución de recursos y reducir las asimetrías de información existente.</p>
-                <li> ¿Por qué sumarme si soy un particular? </li>
-                <p> Porque podrás encontrar información respecto de médicos por especialidad, su disponibilidad horaria, encontrar turnos disponibles de acuerdo a horario y a tu ubicación y leer recomendaciones y comentarios sobre los distintos profesionales de la red.</p>
-                <li> ¿Por qué sumarme si soy un profesional de la salud? </li>
-                <p> Porque te permite posicionarte como un profesional de vanguardia y transparente y acceder a pacientes que están buscando un turno y que confían en las recomendaciones de la comunidad.</p>
-                <li> ¿Tiene costo el servicio? </li>
-                <p> Participar como miembro de la comunidad no tiene ningún costo. Si como profesional de la salud querés crear un "Perfil Destacado" y que tu perfil esté mejor posicionado podés contratar el Plan Premium por tan sólo AR$ 50 (pesos argentinos) por mes.</p>
-                <li> ¿Me puedo dar de baja? </li>
-                <p> Cuando quieras dejar de usar el servicio podés darte de baja y eliminar, modificar o rectificar toda tu información alojada en la plataforma.</p>
-            </ul>
-        </article>
-
-    </section>
-                <p> Si tu duda no está respondida, no dudes en contactarnos.</p>
-    <section>
-        <a <a href="mailto:jverde.md@gmail.com ?subject=Pregunta%20sobre%20M3D"> Preguntar </a>
-    </section>
-    <br>
-    <footer>
-        <a href="#home"> Volver al Home </a>
-    </footer>
+   <div class="footerContainer">
+      <footer></footer>
+   </div>
 
 </body>
 
