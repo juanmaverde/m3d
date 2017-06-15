@@ -358,8 +358,8 @@ export default StyleSheet.create({
         "fontFamily": "'Quicksand',                sans-serif"
     },
     "frequentQuestions": {
-        "fontFamily": "'Quicksand',                sans-serif",
-        "color": "#ed565c"
+        "color": "#ed565c",
+        "fontFamily": "'Quicksand',                sans-serif"
     },
     "questionsAndAnswers": {
         "fontFamily": "'Quicksand',                sans-serif"
@@ -369,5 +369,51 @@ export default StyleSheet.create({
     },
     "questionsAndAnswers ul p": {
         "color": "#757575"
-    }
+    },
+    "loginRegisterContainer": {
+        "width": 99.9 * vw,
+        "height": 550,
+        "marginTop": 50
+    },
+    "loginContainer": {
+        "width": 40 * vw,
+        "height": 200,
+        "marginTop": 0,
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto",
+        "borderRadius": 7,
+        "backgroundColor": "#009688"
+    },
+    "loginContainer input": {
+        "width": 25 * vw,
+        "height": 25,
+        "marginTop": 20,
+        "borderRadius": 5,
+        "marginLeft": 95
+    },
+    "loginForm": {},
+    "submit": {
+        "width": 100
+    },
+    "registerContainer": {
+        "width": 40 * vw,
+        "height": 100,
+        "marginTop": 0,
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto",
+        "borderRadius": 7,
+        "backgroundColor": "RGBA(237, 86, 92, 0.75)"
+    },
+    "registerContainer p": {
+        "position": "relative",
+        "fontFamily": "'Quicksand', sans-serif",
+        "left": 100,
+        "marginTop": 20
+    },
+    "registerForm": {
+        "marginLeft": 200
+    },
+    "registerButton": {}
 });

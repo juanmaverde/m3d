@@ -37,13 +37,21 @@
       </header>
    </div>
    <main>
-      <div class="mainContainer">
-
+      <div class="loginRegisterContainer">
+         <div class="loginContainer">
+            <form class="loginForm" action="index.html" method="post">
+               <input type="text" name="user" value="" placeholder="Nombre de usuario">
+               <input type="password" name="pass" value="" placeholder="Contraseña">
+               <input class="submit" type="submit" name="submit" value="Enviar">
+            </form>
+         </div>
+         <div class="registerContainer">
+            <p>No tengo cuenta y quiero registrarme!</p>
+            <form class="registerForm" action="index.html" method="post">
+               <button type="button" name="registerButton">Registrarme</button>
+            </form>
+         </div>
       </div>
-
-            <hr>
-            <!--linea de division-->
-
 
    </main>
    <div class="footerContainer">

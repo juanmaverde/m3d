@@ -389,9 +389,9 @@ main {}
 }
 
 .frequentQuestions {
-   font-family : 'Quicksand',
+  color       : #ed565c;
+  font-family : 'Quicksand',
                 sans-serif;
-color: #ed565c;
 }
 
 .questionsAndAnswers {
@@ -405,6 +405,61 @@ color: #ed565c;
 
 .questionsAndAnswers ul p {
   color : #757575;
+}
+
+/**
+ * --------------------- LOGIN / REGISTER STYLES
+ * -----------------------------------
+ */
+
+.loginRegisterContainer {
+  width      : 99.9vw;
+  height     : 550px;
+  margin-top : 50px;
+}
+
+.loginContainer {
+  width            : 40vw;
+  height           : 200px;
+  margin           : 0 auto;
+  border-radius    : 7px;
+  background-color : #009688;
+}
+
+.loginContainer input {
+  width         : 25vw;
+  height        : 25px;
+  margin-top    : 20px;
+  border-radius : 5px;
+  margin-left: 95px;
+}
+
+.loginForm {}
+
+.submit {
+   width: 100px;
+}
+
+.registerContainer {
+  width            : 40vw;
+  height           : 100px;
+  margin           : 0 auto;
+  border-radius    : 7px;
+  background-color : RGBA(237, 86, 92, 0.75);
+}
+
+.registerContainer p {
+  position    : relative;
+  font-family : 'Quicksand', sans-serif;
+  left: 100px;
+  margin-top: 20px;
+}
+
+.registerForm {
+margin-left: 200px;
+}
+
+.registerButton {
 }
 
 /* --------------------- FOOTER FORM STYLES ----------------------------------- */
