@@ -407,59 +407,123 @@ main {}
   color : #757575;
 }
 
-/**
- * --------------------- LOGIN / REGISTER STYLES
- * -----------------------------------
- */
 
-.loginRegisterContainer {
-  width      : 99.9vw;
-  height     : 550px;
-  margin-top : 50px;
-}
+/* ------------- LOGIN STYLES ----*/
 
 .loginContainer {
-  width            : 40vw;
-  height           : 200px;
-  margin           : 0 auto;
-  border-radius    : 7px;
-  background-color : #009688;
+   height: 45vh;
+   margin-top: 50px;
 }
 
-.loginContainer input {
-  width         : 25vw;
-  height        : 25px;
-  margin-top    : 20px;
-  border-radius : 5px;
-  margin-left: 95px;
+.loginContainer p {
+   font-family: 'Quicksand', sans-serif;
+   color: RGBA(5, 64, 124, 1.00);
+   font-size: 1.2em;
+   text-align: center;
 }
 
-.loginForm {}
+.loginForm {
+
+}
+
+.loginForm input {
+   line-height: 30px;
+   margin-top: 20px;
+   width: 30vw;
+
+   border-radius: 5px;
+   display: block;
+   margin: 0 auto;
+   margin-top: 15px;
+   background-color: RGBA(68, 138, 254, 0.20);
+}
 
 .submit {
-   width: 100px;
+   width: 10vw;
+   border-radius: 5px;
+   height: 30px;
+   margin-left: 45vw;
+   color: white;
 }
 
+.redirectToRegister {
+   background-color: RGBA(188, 189, 189, 1.00);
+   height: 100px;
+   line-height: 30px;
+   font-family: 'Quicksand', sans-serif;
+   color: RGBA(5, 64, 124, 1.00);
+   font-size: 1.2em;
+   text-align: center;
+}
+
+.redirectToRegisterLink a {
+   text-decoration: none;
+   color: white;
+   background-color: RGBA(255, 255, 255, 0.25);
+   border: solid white 1px;
+   padding: 5px;
+   border-radius: 5px;
+}
+
+/* ------------- REGISTER STYLES ----*/
+
 .registerContainer {
-  width            : 40vw;
-  height           : 100px;
-  margin           : 0 auto;
-  border-radius    : 7px;
-  background-color : RGBA(237, 86, 92, 0.75);
+   height: 45vh;
+   margin-top: 50px;
 }
 
 .registerContainer p {
-  position    : relative;
-  font-family : 'Quicksand', sans-serif;
-  left: 100px;
-  margin-top: 20px;
+   font-family: 'Quicksand', sans-serif;
+   color: RGBA(5, 64, 124, 1.00);
+   font-size: 1.2em;
+   text-align: center;
 }
 
 .registerForm {
-margin-left: 200px;
+   margin: 0 auto;
+   width: 30vw;
+   height: 30vh;
+   display: flex;
+   flex-flow: column nowrap;
 }
 
-.registerButton {
+.registerForm input {
+   line-height: 30px;
+   margin-top: 20px;
+   border-radius: 5px;
+   background-color: RGBA(68, 138, 254, 0.20);
+}
+
+.submitContainer {
+   width: 100vw;
+}
+
+.submitContainer input {
+   height: 30px;
+   background-color: RGBA(0, 150, 136, 1.00);
+   border-radius: 5px;
+   color: white;
+   width: 10vw;
+   margin-left: 45vw;
+}
+
+.redirectToLogin {
+   background-color: RGBA(188, 189, 189, 1.00);
+   height: 100px;
+   line-height: 30px;
+   font-family: 'Quicksand', sans-serif;
+   color: RGBA(5, 64, 124, 1.00);
+   font-size: 1.2em;
+   text-align: center;
+}
+
+.redirectToLoginLink a {
+   text-decoration: none;
+   color: white;
+   background-color: RGBA(255, 255, 255, 0.25);
+   border: solid white 1px;
+   padding: 5px;
+   border-radius: 5px;
 }
 
 /* --------------------- FOOTER FORM STYLES ----------------------------------- */

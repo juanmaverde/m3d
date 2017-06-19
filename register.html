@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="bootstrap.css">
    <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Quicksand|Roboto+Condensed" rel="stylesheet">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-   <title> M3D </title>
+   <title> M3D | Registro </title>
 </head>
 
 <body>
@@ -29,27 +29,31 @@
          <div class="mainMenuContainer">
             <nav>
                <ul class="mainMenu">
-                  <li><a href="loginRegister.html">CREAR CUENTA</a></li>
-                  <li><a href="#" class="mainMenuFavorite">INGRESO</a></li>
+                  <li><a href="register.html">CREAR CUENTA</a></li>
+                  <li><a href="login.html" class="mainMenuFavorite">INGRESO</a></li>
                </ul>
             </nav>
          </div>
       </header>
    </div>
    <main>
-      <div class="loginRegisterContainer">
-         <div class="loginContainer">
-            <form class="loginForm" action="index.html" method="post">
-               <input type="text" name="user" value="" placeholder="Nombre de usuario">
-               <input type="password" name="pass" value="" placeholder="Contraseña">
-               <input class="submit" type="submit" name="submit" value="Enviar">
+      <div class="registerContainer">
+         <p>Complete los siguientes datos de registro para crear su cuenta:</p>
+            <form action="index.html" method="post">
+               <div class="registerForm">
+                  <input type="text" name="user" value="" placeholder="Nombre de usuario">
+                  <input type="password" name="pass" value="" placeholder="Contraseña">
+                  <input type="password" name="rePass" value="" placeholder="Repita su contraseña">
+               </div>
+               <div class="submitContainer">
+                  <input type="submit" name="submit" value="Enviar">
+               </div>
             </form>
-         </div>
-         <div class="registerContainer">
-            <p>No tengo cuenta y quiero registrarme!</p>
-            <form class="registerForm" action="index.html" method="post">
-               <button type="button" name="registerButton">Registrarme</button>
-            </form>
+      </div>
+      <div class="redirectToLogin">
+            <p>Ya tengo una cuenta, quiero ingresar!</p>
+         <div class="redirectToLoginLink">
+            <a href="login.html">Ingresar</a>
          </div>
       </div>
 

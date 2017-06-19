@@ -370,50 +370,110 @@ export default StyleSheet.create({
     "questionsAndAnswers ul p": {
         "color": "#757575"
     },
-    "loginRegisterContainer": {
-        "width": 99.9 * vw,
-        "height": 550,
+    "loginContainer": {
+        "height": 45 * vh,
         "marginTop": 50
     },
-    "loginContainer": {
-        "width": 40 * vw,
-        "height": 200,
-        "marginTop": 0,
-        "marginRight": "auto",
-        "marginBottom": 0,
-        "marginLeft": "auto",
-        "borderRadius": 7,
-        "backgroundColor": "#009688"
-    },
-    "loginContainer input": {
-        "width": 25 * vw,
-        "height": 25,
-        "marginTop": 20,
-        "borderRadius": 5,
-        "marginLeft": 95
+    "loginContainer p": {
+        "fontFamily": "'Quicksand', sans-serif",
+        "color": "RGBA(5, 64, 124, 1.00)",
+        "fontSize": 1.2,
+        "textAlign": "center"
     },
     "loginForm": {},
+    "loginForm input": {
+        "lineHeight": 30,
+        "marginTop": 15,
+        "width": 30 * vw,
+        "borderRadius": 5,
+        "display": "block",
+        "marginRight": "auto",
+        "marginBottom": 0,
+        "marginLeft": "auto",
+        "backgroundColor": "RGBA(68, 138, 254, 0.20)"
+    },
     "submit": {
-        "width": 100
+        "width": 10 * vw,
+        "borderRadius": 5,
+        "height": 30,
+        "marginLeft": 45 * vw,
+        "color": "white"
+    },
+    "redirectToRegister": {
+        "backgroundColor": "RGBA(188, 189, 189, 1.00)",
+        "height": 100,
+        "lineHeight": 30,
+        "fontFamily": "'Quicksand', sans-serif",
+        "color": "RGBA(5, 64, 124, 1.00)",
+        "fontSize": 1.2,
+        "textAlign": "center"
+    },
+    "redirectToRegisterLink a": {
+        "textDecoration": "none",
+        "color": "white",
+        "backgroundColor": "RGBA(255, 255, 255, 0.25)",
+        "border": "solid white 1px",
+        "paddingTop": 5,
+        "paddingRight": 5,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "borderRadius": 5
     },
     "registerContainer": {
-        "width": 40 * vw,
-        "height": 100,
+        "height": 45 * vh,
+        "marginTop": 50
+    },
+    "registerContainer p": {
+        "fontFamily": "'Quicksand', sans-serif",
+        "color": "RGBA(5, 64, 124, 1.00)",
+        "fontSize": 1.2,
+        "textAlign": "center"
+    },
+    "registerForm": {
         "marginTop": 0,
         "marginRight": "auto",
         "marginBottom": 0,
         "marginLeft": "auto",
-        "borderRadius": 7,
-        "backgroundColor": "RGBA(237, 86, 92, 0.75)"
+        "width": 30 * vw,
+        "height": 30 * vh,
+        "display": "flex",
+        "flexFlow": "column nowrap"
     },
-    "registerContainer p": {
-        "position": "relative",
+    "registerForm input": {
+        "lineHeight": 30,
+        "marginTop": 20,
+        "borderRadius": 5,
+        "backgroundColor": "RGBA(68, 138, 254, 0.20)"
+    },
+    "submitContainer": {
+        "width": 100 * vw
+    },
+    "submitContainer input": {
+        "height": 30,
+        "backgroundColor": "RGBA(0, 150, 136, 1.00)",
+        "borderRadius": 5,
+        "color": "white",
+        "width": 10 * vw,
+        "marginLeft": 45 * vw
+    },
+    "redirectToLogin": {
+        "backgroundColor": "RGBA(188, 189, 189, 1.00)",
+        "height": 100,
+        "lineHeight": 30,
         "fontFamily": "'Quicksand', sans-serif",
-        "left": 100,
-        "marginTop": 20
+        "color": "RGBA(5, 64, 124, 1.00)",
+        "fontSize": 1.2,
+        "textAlign": "center"
     },
-    "registerForm": {
-        "marginLeft": 200
-    },
-    "registerButton": {}
+    "redirectToLoginLink a": {
+        "textDecoration": "none",
+        "color": "white",
+        "backgroundColor": "RGBA(255, 255, 255, 0.25)",
+        "border": "solid white 1px",
+        "paddingTop": 5,
+        "paddingRight": 5,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "borderRadius": 5
+    }
 });
