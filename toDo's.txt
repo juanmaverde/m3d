@@ -1,0 +1,18 @@
+
+IDEA tips para el proceso de signUp ==============================
+
+-> https://login.mailchimp.com/signup/
+
+1) primer campo EMAIL
+- simplemente
+2) segundo campo USERNAME
+3) tercer campo PASSWORD
+
+preferentemente en multi-pasos para solicitar algo mas q lo previo
+
+diseno de overLay page
+
+social auto-fill
+
+labels por encima
+==================================================================
