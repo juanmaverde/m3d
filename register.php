@@ -1,50 +1,59 @@
 <?php
+require_once'User.php';
+require_once'FormManager.php';
+require_once'DbManager.php';
 
-// @TODO borrar archivos de debugging...
-// @TODO no permiter proseguir ante username repetido
+// @TODO manejo de errores y los avisos embebidos en el HTML
 
-require_once'user.php';
-
-if ($_REQUEST['submit']) { // if submit button pressed
-   // dump $_REQUEST data to local scope variables
-   $username = $_REQUEST['username'];
-   $email = $_REQUEST['email'];
+// check if form already sent AND create new instance form manager
+$formManager = new FormManager($_REQUEST['submit']);
+// if form submitted, load data in object
+if($formManager->getFormSubmitted()) {
+   $IP = $_SERVER['REMOTE_ADDR'];
+   $username = strtolower($_REQUEST['username']);
+   $email = strtolower($_REQUEST['email']);
    $password = $_REQUEST['password'];
-
-   // begin validation
-   $resultUserValidation = userValidation($username, $email, $password);
-   // if all 3 validations are TRUE => continue
-   if($resultUserValidation === true) { // hash password
-      $hashedPassword = hashPassword($password);
-
-      // save userData to database
-      $resultStoreUserData = storeUserData($username, $email, $hashedPassword);
-      if($resultStoreUserData == true) { // if userData saved OK
-         // rename pic AND save in ./pic folder
-         $pic = $_FILES['profilePic'];
-         $resultStorePic = storePic($pic, $username);
-         // start session and save parameters
-         if ($resultStorePic == true) {
-            session_start();
-            $_SESSION['username'] = $username;
-            // redirect to index
-            header('Location:index.php');
-         } else {
-            echo "dificultades para cargar la foto";
+   // check if enough data to create user
+   if (!empty($username) && !empty($email) && !empty($password)) {
+      // create new instance User
+      $user = new User($username, $email, $password);
+      // begin validation process
+         // validate username && email && password
+      if ($user->validateUsername() && $user->validateEmail() && $user->validatePassword()) {
+         // hash password
+         $hashedPassword = $user->hashPassword();
+         $dbManager = new DbManager();
+         if ($dbManager->duplicatedUsername($username) == false) {
+            // store data in db
+            if($dbManager->storeRegisterUserData($username, $email, $hashedPassword)) {
+            // move pic to /pics
+               if($user->storePic($_FILES['pic'])) {
+               // start session and load attributes
+               session_start();
+               $_SESSION['username'] = $username;
+               // redirect to index.php
+               header('Location:index.php');
+               } else {
+                  echo "la foto de perfil no ha podido ser almacenada";
+               }
+            } else {
+               echo "han habido dificultades durante el almacenamiento de los datos de usuario";
          }
+         } else {
+            echo "el nombre de usuario ya existe en nuestra base de datos";
+         }
+      } else {
+         echo "han surgido errores durante la validación de los campos";
       }
-   } else { // show error message
-      // @FIXME no funciona el array recolector de errores de validaciones
-      $errors = $result;
-      var_dump($result);
+   } else {
+      echo "todos los datos deben ser completados";
    }
 }
 
+?>
 
- ?>
 
-<!-- HTML code from here -->
-
+<!--=========== HTML code from here ==========-->
 <!DOCTYPE html>
 <html>
 
@@ -61,7 +70,7 @@ if ($_REQUEST['submit']) { // if submit button pressed
    <div>
       <header class="largeHeaderContainer">
          <div class="logoContainer">
-            <a href="index.html"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
+            <a href="index.php"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
          </div>
          <div class="secondaryMenuContainer">
             <nav>
@@ -92,7 +101,7 @@ if ($_REQUEST['submit']) { // if submit button pressed
                   <input type="email" name="email" value="" placeholder="Email">
                   <input type="password" name="password" value="" placeholder="Contraseña">
                <div class="pic">
-                  <input type="file" name="profilePic" value="">
+                  <input type="file" name="pic" value="">
                </div>
                </div>
                <div class="submitContainer">
