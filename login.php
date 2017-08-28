@@ -1,9 +1,33 @@
 <?php
+require_once'FormManager.php';
+require_once'DbManager.php';
 
-
-
+$formManager = new FormManager($_REQUEST['submit']);
+// if form submitted, load data in object
+if($formManager->getFormSubmitted()) { // can logIn using both, username OR email
+   $IP = $_SERVER['REMOTE_ADDR'];
+   $emailOrUsername = $_REQUEST['emailOrUsername'];
+   $password = $_REQUEST['password'];
+   $dbManager = new DbManager();
+   $result = $dbManager->getLoginData($emailOrUsername);
+   if ($result['username'] == $emailOrUsername || $result['email'] == $emailOrUsername) { // @FIXME esto esta hardCoded
+      if (md5($password) == $result['password']) {
+         // @TODO registro del logIn en log
+         if ($_REQUEST['remember']) {
+            $lifetime = 2592000;
+         } else {
+            $lifetime = 3600;
+         }
+         session_set_cookie_params($lifetime);
+         session_start();
+         $_SESSION['username'] = $result['username'];
+         header('Location:index.php');
+      } else {
+         echo "el usuario y la contrasena no coinciden";
+      }
+   }
+}
 ?>
-
 
 <!--=========== HTML code from here ==========-->
 <!DOCTYPE html>
@@ -48,8 +72,10 @@
          <p>Complete sus datos de ingreso</p>
          <div class="loginForm">
             <form action="login.php" method="post">
-               <input type="text" name="user" value="" placeholder="Nombre de usuario">
+               <input type="text" name="emailOrUsername" value="" placeholder="Nombre de usuario o Email">
                <input type="password" name="password" value="" placeholder="Contraseña">
+               <label for="remember">Recordarme</label>
+               <input type="checkbox" name="remember" value="" checked>
                <div class="submitContainer">
                   <input type="submit" name="submit" value="submit">
                </div>

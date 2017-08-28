@@ -4,7 +4,7 @@ require_once'FormManager.php';
 require_once'DbManager.php';
 
 // @TODO manejo de errores y los avisos embebidos en el HTML
-
+// @TODO agregar el store del IP dentro de la DB
 // check if form already sent AND create new instance form manager
 $formManager = new FormManager($_REQUEST['submit']);
 // if form submitted, load data in object
@@ -25,15 +25,14 @@ if($formManager->getFormSubmitted()) {
          $dbManager = new DbManager();
          if ($dbManager->duplicatedUsername($username) == false) {
             // store data in db
-            if($dbManager->storeRegisterUserData($username, $email, $hashedPassword)) {
+            if($dbManager->storeRegisterUserData($username, $email, $hashedPassword, $IP)) {
             // move pic to /pics
                if($user->storePic($_FILES['pic'])) {
                // start session and load attributes
                session_start();
                $_SESSION['username'] = $username;
                // redirect to index.php
-               //@TODO redireccionar
-               //header('Location:index.php');
+               header('Location:index.php');
                } else {
                   echo "la foto de perfil no ha podido ser almacenada";
                }

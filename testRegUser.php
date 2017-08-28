@@ -1,20 +1,14 @@
 <?php
-require_once'testUser.php';
 
-class RegUser
+class RegUser extends User
 {
-   public $dob;
-   public $gender;
+   public function getUsername() {
+      //return $this->username;
+      parent::getUsername();
+   }
 
-   public $username;
-
-   public function __construct($username) {
+   public function setUsername($username) {
       $this->username = $username;
    }
-
-   public function getUsername() {
-      return $this->username;
-   }
-
 }
  ?>

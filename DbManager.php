@@ -36,9 +36,9 @@ public function setDsn() {
 }
 
 // DATABASE UPLOAD
-public function storeRegisterUserData($username, $email, $hashedPassword) {
+public function storeRegisterUserData($username, $email, $hashedPassword, $IP) {
    $db = new PDO($this->dsn, $this->dbUser, $this->dbPass);
-   $statement = $db->prepare("INSERT INTO users(username, email, password) VALUES ('$username', '$email', '$hashedPassword')");
+   $statement = $db->prepare("INSERT INTO users(username, email, password, IPaddress) VALUES ('$username', '$email', '$hashedPassword', '$IP')");
    $statement->execute();
    return true;
 }
@@ -54,6 +54,15 @@ public function duplicatedUsername($username) {
    } else {
       return false;
    }
+}
+
+public function getLoginData($emailOrUsername) {
+   $db = new PDO($this->dsn, $this->dbUser, $this->dbPass);
+   $query = $db->prepare("SELECT * FROM users WHERE username = '$emailOrUsername' OR email = '$emailOrUsername'");
+   $query->execute();
+   $result = $query->fetch(PDO::FETCH_ASSOC);
+
+   return $result;
 }
 
 }

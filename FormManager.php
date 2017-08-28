@@ -28,16 +28,7 @@ class FormManager
          return true;
       } else return false;
    }
-// if submitted, load object attributes
-   public function loadFormData($IP, $username, $email, $password, $dob = null, $gender = null, $location = null) {
-      $this->IP = $IP;
-      $this->username = $username;
-      $this->email = $email;
-      $this->password = $password;
-      $this->dob = $dob;
-      $this->gender = $gender;
-      $this->location -> $location;
-   }
+
 // check if all signUp data is OK
    public function checkRegisterData() {
       if(($this->username) && ($this->email) && ($this->password)) {
