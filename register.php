@@ -32,7 +32,8 @@ if($formManager->getFormSubmitted()) {
                session_start();
                $_SESSION['username'] = $username;
                // redirect to index.php
-               header('Location:index.php');
+               //@TODO redireccionar
+               //header('Location:index.php');
                } else {
                   echo "la foto de perfil no ha podido ser almacenada";
                }
