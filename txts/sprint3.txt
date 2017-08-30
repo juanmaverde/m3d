@@ -1,0 +1,13 @@
+Sprint #3 - MySQL y PHP
+:: Descripción del sprint ::
+Fecha de entrega: 07/09
+
+Consignas:
+
+El cliente migrar nuestro sistema, a uno que soporte base de datos SQL.
+El cliente pide que haya un script php que permita
+Crear las tablas correspondientes en la base de datos.
+Migrar los usuarios ya existentes en JSON a la nueva base de datos.
+Optativo:
+
+El cliente pide tener en consideración que así como el código de ahora en más funcionará con una base de datos MySQL, gustaría que el código este preparado también para cambiar el tipo de base de datos. Por ejemplo, si quisiéramos volver a JSON, debería ser algo sencillo.
