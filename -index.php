@@ -1,8 +1,7 @@
 <?php
 session_start();
-var_dump($_SESSION);
 
- ?>
+?>
 
 <!-- HTML code from here -->
 
@@ -23,7 +22,7 @@ var_dump($_SESSION);
    <div>
       <header class="largeHeaderContainer">
          <div class="logoContainer">
-            <a href="index.html"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
+            <a href="index.php"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
          </div>
          <div class="secondaryMenuContainer">
             <nav>
@@ -39,7 +38,7 @@ var_dump($_SESSION);
             <nav>
                <ul class="mainMenu">
                   <li><a href="register.php">CREAR CUENTA</a></li>
-                  <li><a href="login.html" class="mainMenuFavorite">INGRESO</a></li>
+                  <li><a href="login.php" class="mainMenuFavorite">INGRESO</a></li>
                </ul>
             </nav>
          </div>

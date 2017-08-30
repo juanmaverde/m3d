@@ -1,6 +1,9 @@
 <?php
-require_once'FormManager.php';
-require_once'DbManager.php';
+require_once'classes/formmanager.php';
+require_once'classes/dbmanager.php';
+
+echo "<pre>";
+var_dump($_SERVER);
 
 $formManager = new FormManager($_REQUEST['submit']);
 // if form submitted, load data in object
