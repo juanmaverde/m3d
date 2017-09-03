@@ -1,4 +1,7 @@
 <?php
+
+// @TODO cambios necesarios para poder almacenar profilePic con formato username.extension
+
 // accepts a IMAGE file and:
    // instance the object
    // store pic in desired PATH
@@ -6,6 +9,7 @@
 class PicManager
 {
    private $pic;
+   private $path = '../pics/';
 
    public function __construct($imageFile)
    {
@@ -19,7 +23,7 @@ class PicManager
       // obtain extension
       $picExtension = pathinfo($picName, PATHINFO_EXTENSION);
       //move to /pics
-      if(move_uploaded_file($picPath, '../pics/' . md5(time()) . '.' . $picExtension))
+      if(move_uploaded_file($picPath, $path . md5(time()) . '.' . $picExtension))
       {
          return true;
       } else {
