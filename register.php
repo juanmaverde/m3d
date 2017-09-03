@@ -1,7 +1,7 @@
 <?php
-require_once'User.php';
-require_once'FormManager.php';
-require_once'DbManager.php';
+require_once'classes/user.php';
+require_once'classes/formmanager.php';
+require_once'classes/dbmanager.php';
 
 // @TODO manejo de errores y los avisos embebidos en el HTML
 // @TODO agregar el store del IP dentro de la DB
