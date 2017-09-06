@@ -1,1 +1,3 @@
 @IDEA hacer un class 'Session' para manejo de sesiones
+
+@IDEA para manejo de sesiones -> agregar contador 
