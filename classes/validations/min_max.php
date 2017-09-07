@@ -1,16 +1,16 @@
 <?php
 require_once 'validation.php';
 
-class MinMax
+class MinMax extends Validation
 {// returns TRUE if string more than 3 AND less than 21
       // else FALSE
    const MIN_LONG = 3;
    const MAX_LONG = 21;
 
-   public function __construct($input)
+   public function __construct($string)
    {
-      if (strlen($input) > MinMax::MIN_LONG && strlen($input) < MinMax::MAX_LONG) {
-         parent::$result = true;
+      if (strlen($string) > MinMax::MIN_LONG && strlen($string) < MinMax::MAX_LONG) {
+         $this->result = true;
       } else {
          $this->result = false;
       }

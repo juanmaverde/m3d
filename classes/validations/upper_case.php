@@ -1,7 +1,7 @@
 <?php
 require_once 'validation.php';
 
-class UpperCase
+class UpperCase extends Validation
 {// returns TRUE if ANY UpperCase
       // FALSE if NO UpperCase
    public function __construct($string)
