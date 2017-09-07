@@ -2,7 +2,7 @@
 
 class UsernameException extends Exception
 {
-   
+
 }
 
 ?>

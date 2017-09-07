@@ -1,15 +1,34 @@
 <?php
 require_once 'string_field.php';
 
-class Email
+require_once '../../exceptions/email_exception.php';
+
+class Email extends StringField
 {
    protected $email;
 
-   public function validate() {
+   public function __construct($email)
+   {
+      parent::__construct($email);
+      $this->email = $email;
+   }
+
+   public function validate()
+   {
       // validation rules:
          // valid format
-         // existent and valid domain
+         // @TODO pendiente agregar funcionalidad de validacion de dominio aparte de formato de email
+      if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+         return true;
+      } else {
+         throw new EmailException("Formato de email no valido", 10);
+         return false;
+      }
+   }
+
+   public function getEmail()
+   {
+      return $this->email;
    }
 }
-
 ?>

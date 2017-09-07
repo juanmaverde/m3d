@@ -27,16 +27,16 @@ class Username extends StringField
          // no Special Char : FALSE -> classes/validations/special_char.php
       $minMax = new MinMax($this->username);
       $resMinMax = $minMax->getResult();
-      // var_dump($resMinMax);
+
       $whitespaces = new Whitespace($this->username);
       $resWhitespaces = $whitespaces->getResult();
-      // var_dump($resWhitespaces);
+
       $alphaNum = new AlphaNum($this->username);
       $resAlphaNum = $alphaNum->getResult();
-      // var_dump($resAlphaNum);
+
       $specialChar = new SpecialChar($this->username);
       $resSpecialChar = $specialChar->getResult();
-      // var_dump($resSpecialChar);
+      
 
       if ($resMinMax) {
          // echo "longitud adecuada" . '<br>';
