@@ -1,7 +1,7 @@
 <?php
 require_once 'validation.php';
 
-class Whitespace extends Validations
+class Whitespace extends Validation
 {// returns TRUE if NO whitespaces
       // FALSE if ANY whitespace
    public function __construct($string)
