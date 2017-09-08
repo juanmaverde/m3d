@@ -13,6 +13,8 @@ class Email extends StringField
       $this->email = $email;
    }
 
+//@TODO manejo de las excepciones
+
    public function validate()
    {
       // validation rules:

@@ -36,16 +36,13 @@ class Username extends StringField
 
       $specialChar = new SpecialChar($this->username);
       $resSpecialChar = $specialChar->getResult();
-      
+
+//@TODO manejo de excepciones
 
       if ($resMinMax) {
-         // echo "longitud adecuada" . '<br>';
          if ($resWhitespaces) {
-            // echo "sin espacios en blanco" . '<br>';
             if ($resAlphaNum) {
-               // echo "es alfa-num" . '<br>';
                if (!$resSpecialChar) {
-                  // echo "no contiene caracteres especiales" . '<br>';
                   return true;
                } else {
                   throw new UsernameException("contiene caracteres especiales", 4);

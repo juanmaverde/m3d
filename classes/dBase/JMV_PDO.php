@@ -5,16 +5,23 @@ class JMVPDO extends PDO
     {
         if (!$settings = parse_ini_file($file, TRUE)) throw new Exception('Unable to open ' . $file);
 
-        $dsn = $settings['database']['driver'] . ':host=' . $settings['database']['host'] . ';dbName=' . $settings['database']['dbName'] . ';charset=' . $settings['database']['charset'] . ';port=' . $settings['database']['port'];
+        $dsn = $settings['database']['driver'] . ':host=' . $settings['database']['host'] . ';dbName=' . $settings['database']['dbName'] . ';charset=' . $settings['database']['charset'] . ';' . 'port=' . $settings['database']['port'];
 
-        //echo $settings['database']['port'];
         var_dump($dsn);
 
-        parent::__construct($dsn, 'juanmaverde', 'nstlqe');
+        parent::__construct($dsn, $settings['database']['username'], $settings['database']['password']);
     }
 }
+try {
+   $pdo = new JMVPDO();
+   echo "<pre>";
+   var_dump($pdo);
+   $pdo->prepare();
+} catch (Exception $e) {
 
-$pdo = new JMVPDO();
-// echo "<pre>";
-// var_dump($pdo);
+}
+
+
+
+
 ?>

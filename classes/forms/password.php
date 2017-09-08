@@ -1,4 +1,7 @@
 <?php
+//@TODO ARREGLAR PANTALLA DE EXCEPCIONES DE PHP
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 require_once 'string_field.php'; // parent class
 
 require_once '../validations/min_max.php';
@@ -42,6 +45,7 @@ class Password extends StringField
       $upperCase = new UpperCase($this->password);
       $resUpperCase = $upperCase->getResult();
 
+//@TODO -> cambiar excepciones a clases individuales
 
       if ($resMinMax) {
          if ($resWhitespaces) {
@@ -51,29 +55,38 @@ class Password extends StringField
                      return true;
                   } else {
                      throw new PasswordException("debe contener al menos una MAY", 25);
-                     return false;
                   }
                } else {
                   throw new PasswordException("debe contender al menos un caracter especial", 24);
-                  return false;
                }
             } else {
                throw new PasswordException("debe contender al menos un caracter especial", 23);
-               return false;
             }
          } else {
             throw new PasswordException("no debe contener espacios en blanco", 22);
-            return false;
          }
       } else {
          throw new PasswordException("longitud incorrecta", 21);
-         return false;
       }
-
    }
    public function getPassword()
    {
       return $this->password;
    }
 }
+//@FIXME manejo de los bloques de TRY & CATCH
+try {
+   $pas = new Password('jua;lsdjkas ');
+   $res = $pas->validate();
+   echo "<pre>";
+   var_dump($res);
+} catch (Exception $e) {
+   echo $e->getMessage();
+   echo "<pre>";
+   $res = false;
+   var_dump($res);
+}
+
+
+
 ?>
