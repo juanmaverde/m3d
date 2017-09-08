@@ -1,7 +1,4 @@
 <?php
-//@TODO ARREGLAR PANTALLA DE EXCEPCIONES DE PHP
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
 require_once 'string_field.php'; // parent class
 
 require_once '../validations/min_max.php';
@@ -75,17 +72,17 @@ class Password extends StringField
    }
 }
 //@FIXME manejo de los bloques de TRY & CATCH
-try {
+// try {
    $pas = new Password('jua;lsdjkas ');
    $res = $pas->validate();
    echo "<pre>";
    var_dump($res);
-} catch (Exception $e) {
-   echo $e->getMessage();
-   echo "<pre>";
-   $res = false;
-   var_dump($res);
-}
+// } catch (Exception $e) {
+//    echo $e->getMessage();
+//    echo "<pre>";
+//    $res = false;
+//    var_dump($res);
+// }
 
 
 
