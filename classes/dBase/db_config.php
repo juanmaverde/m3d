@@ -41,7 +41,7 @@ class DbConfig
    }
    public function getPDOData()
    {
-      $this->PDOData = $this->dsn . ',' . $this->dbuser . ',' . $this->dbpass;
+      $this->PDOData = ('mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->dbname) . $this->dbuser . ',' . $this->dbpass;
       return $this->PDOData;
    }
 
@@ -65,7 +65,7 @@ class DbConfig
    {
       return $this->dbuser;
    }
-   private function getDbpass()
+   public function getDbpass()
    {
       return $this->dbpass;
    }
