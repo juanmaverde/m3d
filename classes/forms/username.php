@@ -1,12 +1,12 @@
 <?php
 require_once 'string_field.php'; // parent class
 
-require_once '../validations/min_max.php';
-require_once '../validations/whitespace.php';
-require_once '../validations/alpha_num.php';
-require_once '../validations/special_char.php';
+require_once 'classes//validations/min_max.php';
+require_once 'classes/validations/whitespace.php';
+require_once 'classes/validations/alpha_num.php';
+require_once 'classes//validations/special_char.php';
 
-require_once '../../exceptions/username_exception.php';
+require_once 'exceptions/username_exception.php';
 
 class Username extends StringField
 {

@@ -1,10 +1,9 @@
 <?php
 
-require_once 'm3d_pdo.php';
+require_once 'classes/dBase/m3d_pdo.php';
 
 class CheckUsername
 {
-
     private $username;
 
     public function __construct($usernameToCheck)
@@ -15,7 +14,7 @@ class CheckUsername
     public function checkUsername()
     {
         $m3dPDO = new M3dPDO;
-        $query = $m3dPDO->prepare("SELECT * FROM users WHERE username = '$username';");
+        $query = $m3dPDO->prepare("SELECT * FROM users WHERE username = '$this->username';");
         $query->execute();
         $res = $query->fetchAll(PDO::FETCH_ASSOC);
 

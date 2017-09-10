@@ -30,7 +30,7 @@ class DbConfig
          $this->dbuser = $settings['dbuser'];
          $this->dbpass = $settings['dbpass'];
       } else {
-         throw new DbConfigException("The specified .ini file does not exist", 1);
+         //throw new DbConfigException("The specified .ini file does not exist", 1);
       }
    }
 

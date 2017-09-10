@@ -1,59 +1,52 @@
 <?php
-require_once'classes/user.php';
-require_once'classes/formmanager.php';
-require_once'classes/dbmanager.php';
+require_once 'classes/forms/form.php';
 
-// @TODO manejo de errores y los avisos embebidos en el HTML
-// @TODO agregar el store del IP dentro de la DB
-// check if form already sent AND create new instance form manager
-$formManager = new FormManager($_REQUEST['submit']);
-// if form submitted, load data in object
-if($formManager->getFormSubmitted()) {
-   $IP = $_SERVER['REMOTE_ADDR'];
-   $username = strtolower($_REQUEST['username']);
-   $email = strtolower($_REQUEST['email']);
-   $password = $_REQUEST['password'];
-   // check if enough data to create user
-   if (!empty($username) && !empty($email) && !empty($password)) {
-      // create new instance User
-      $user = new User($username, $email, $password);
-      // begin validation process
-         // validate username && email && password
-      if ($user->validateUsername() && $user->validateEmail() && $user->validatePassword()) {
-         // hash password
-         $hashedPassword = $user->hashPassword();
-         $dbManager = new DbManager();
-         if ($dbManager->duplicatedUsername($username) == false) {
-            // store data in db
-            if($dbManager->storeRegisterUserData($username, $email, $hashedPassword, $IP)) {
-            // move pic to /pics
-               if($user->storePic($_FILES['pic'])) {
-               // start session and load attributes
-               session_start();
-               $_SESSION['username'] = $username;
-               // redirect to index.php
-               header('Location:index.php');
-               } else {
-                  echo "la foto de perfil no ha podido ser almacenada";
-               }
-            } else {
-               echo "han habido dificultades durante el almacenamiento de los datos de usuario";
-         }
-         } else {
-            echo "el nombre de usuario ya existe en nuestra base de datos";
-         }
-      } else {
-         echo "han surgido errores durante la validación de los campos";
-      }
-   } else {
-      echo "todos los datos deben ser completados";
-   }
-}
+require_once 'classes/forms/username.php';
+require_once 'classes/dBase/check_username.php';
+require_once 'classes/forms/email.php';
+require_once 'classes/forms/password.php';
+
+require_once 'classes/dBase/store_user_data.php';
+
+// check if form already submitted
+var_dump($_REQUEST);
+$form = new Form($_REQUEST);
+$submittedForm = $form->checkSubmit(); // TRUE if submitted
+
+// download $_REQUEST data to variables
+$username = new Username($_REQUEST['username']);
+$email = new Email($_REQUEST['email']);
+$password = new Password($_REQUEST['password']);
+// username validation
+$validUsername = $username->validate(); // TRUE if valid || UsernameException if FALSE
+$validUsername = $username->getUsername();
+// if user is valid ➞ check if already exists in dBase
+$dupUsername = new CheckUsername($username->getUsername());
+$dup = $dupUsername->checkUsername();
+// if username !exists in dBase ➞ continue validation process
+// email validation
+$validEmail = $email->validate();
+$validEmail = $email->getEmail();
+// password validation
+$validPassword = $password->validate();
+// if all fields are valid ➞ hash password
+//@TODO create class to hash password allowing to extend to other protocols in the future
+$hashedPassword = md5($validPassword);
+// store user data
+$userData = new StoreUserData($validUsername, $validEmail, $hashedPassword);
+$userData->storeData();
+// if data stored without problems ➞ move uploaded pic as profile pic
+
+// start and setup session attributes
+session_start();
+$_SESSION['name'] = $validUsername;
+// redirect to index
+header('Location: index.php');
 
 ?>
 
-
 <!--=========== HTML code from here ==========-->
+
 <!DOCTYPE html>
 <html>
 

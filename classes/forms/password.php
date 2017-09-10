@@ -1,13 +1,13 @@
 <?php
 require_once 'string_field.php'; // parent class
 
-require_once '../validations/min_max.php';
-require_once '../validations/whitespace.php';
-require_once '../validations/alpha_num.php';
-require_once '../validations/special_char.php';
-require_once '../validations/upper_case.php';
+require_once 'classes/validations/min_max.php';
+require_once 'classes/validations/whitespace.php';
+require_once 'classes/validations/alpha_num.php';
+require_once 'classes/validations/special_char.php';
+require_once 'classes/validations/upper_case.php';
 
-require_once '../../exceptions/password_exception.php';
+require_once 'exceptions/password_exception.php';
 
 class Password extends StringField
 {
@@ -72,17 +72,7 @@ class Password extends StringField
    }
 }
 //@FIXME manejo de los bloques de TRY & CATCH
-// try {
-   $pas = new Password('jua;lsdjkas ');
-   $res = $pas->validate();
-   echo "<pre>";
-   var_dump($res);
-// } catch (Exception $e) {
-//    echo $e->getMessage();
-//    echo "<pre>";
-//    $res = false;
-//    var_dump($res);
-// }
+
 
 
 

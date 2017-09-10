@@ -1,10 +1,9 @@
 <?php
 
-require_once 'm3d_pdo.php';
+require_once 'classes/dBase/m3d_pdo.php';
 
 class StoreUserData
 {
-
     private $username;
     private $email;
     private $password;

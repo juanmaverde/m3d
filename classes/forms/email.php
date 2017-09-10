@@ -1,7 +1,7 @@
 <?php
 require_once 'string_field.php';
 
-require_once '../../exceptions/email_exception.php';
+require_once 'exceptions/email_exception.php';
 
 class Email extends StringField
 {
