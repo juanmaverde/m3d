@@ -2,14 +2,14 @@
 
 class Form
 {
-   protected $submit = FALSE; // boolean
+   protected $submit = false; // boolean
 
    public function __construct($request) // input -> $_REQUEST
    {
       if (!empty($request)) {
-         $this->submit = TRUE;
+         $this->submit = true;
       } else {
-         $this->submit = FALSE;
+         $this->submit = false;
       }
    }
 

@@ -23,8 +23,7 @@ class Email extends StringField
       if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
          return true;
       } else {
-         throw new EmailException("Formato de email no valido", 10);
-         return false;
+         throw new EmailException("el formato de email no es válido");
       }
    }
 
@@ -32,5 +31,14 @@ class Email extends StringField
    {
       return $this->email;
    }
+    public function checkSubmit()
+    {
+        if ($this->submit == true) {
+            return $this->submit;
+        } else {
+            throw new EmailException("el campo email debe ser completado", 0);
+        }
+
+    }
 }
 ?>

@@ -1,35 +1,5 @@
 <?php
-require_once'classes/formmanager.php';
-require_once'classes/dbmanager.php';
 
-echo "<pre>";
-var_dump($_SERVER);
-
-$formManager = new FormManager($_REQUEST['submit']);
-// if form submitted, load data in object
-if($formManager->getFormSubmitted()) { // can logIn using both, username OR email
-   $IP = $_SERVER['REMOTE_ADDR'];
-   $emailOrUsername = $_REQUEST['emailOrUsername'];
-   $password = $_REQUEST['password'];
-   $dbManager = new DbManager();
-   $result = $dbManager->getLoginData($emailOrUsername);
-   if ($result['username'] == $emailOrUsername || $result['email'] == $emailOrUsername) { // @FIXME esto esta hardCoded
-      if (md5($password) == $result['password']) {
-         // @TODO registro del logIn en log
-         if ($_REQUEST['remember']) {
-            $lifetime = 2592000;
-         } else {
-            $lifetime = 3600;
-         }
-         session_set_cookie_params($lifetime);
-         session_start();
-         $_SESSION['username'] = $result['username'];
-         header('Location:index.php');
-      } else {
-         echo "el usuario y la contrasena no coinciden";
-      }
-   }
-}
 ?>
 
 <!--=========== HTML code from here ==========-->

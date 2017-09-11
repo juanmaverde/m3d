@@ -13,10 +13,6 @@ abstract class StringField extends Form
       $this->input = $request;
    }
 
-   public function getKeys()
-   {
-      return (array_keys($this->input));
-   }
    abstract function validate();
 }
 ?>

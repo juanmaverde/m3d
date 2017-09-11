@@ -7,6 +7,11 @@ require_once 'classes/forms/password.php';
 require_once 'classes/dBase/store_user_data.php';
 require_once 'store_profile_pic.php';
 
+require_once 'exceptions/username_exception.php';
+require_once 'exceptions/min_max_exception.php';
+require_once 'exceptions/email_exception.php';
+require_once 'exceptions/password_exception.php';
+
 // check if form already submitted
 $form = new Form($_REQUEST);
 if ($form->checkSubmit()) { // TRUE if submitted
@@ -14,45 +19,50 @@ if ($form->checkSubmit()) { // TRUE if submitted
     $username = new Username($_REQUEST['username']);
     $email = new Email($_REQUEST['email']);
     $password = new Password($_REQUEST['password']);
-    // check if every field was filled
-    if ($username->checkSubmit() && $email->checkSubmit() && $password->checkSubmit()) {
+    try {
+      // check if every field was filled
+      if ($username->checkSubmit() && $email->checkSubmit() && $password->checkSubmit()) {
         // start validation process
         // username validation
         $validUsername = $username->validate(); // true | exception
-        if ($validUsername) {
-            // if username is valid it is stored in a variable
-            $validUsername = $username->getUsername();
-            // query the dBase to check if username is duplicated
-            $dupUsername = new CheckUsername($validUsername);
-            $dup = $dupUsername->checkUsername();
-            // if username !exists in dBase ➞ continue validation process
-            if ($dup == false) {
-                // email validation
-                $validEmail = $email->validate();
-                if ($validEmail) {
-                    $validEmail = $email->getEmail();
-                    // password validation
-                    $validPassword = $password->validate();
-                    if ($validPassword) { //@TODO create class to hash password allowing to extend to other protocols in the future
-                        $hashedPassword = md5($validPassword);
-                        // store user data
-                        $userData = new StoreUserData($validUsername, $validEmail, $hashedPassword);
-                        $storeData = $userData->storeData();
-                        // if uploaded ➞ move profilePic to /pics
-                        $pic = new StorePic($_FILES['pic']);
-                        $pic->storeProfilePic($validUsername);
-                        // start and setup session attributes
-                        session_start();
-                        $_SESSION['name'] = $validUsername;
-                        // redirect to index
-                        header('Location: index.php');
-                    }
-                }
-            }
-        }
-    }
-} else {
-    // ===>>> @TODO resolver como manejar en caso de que no hay enviado el formulario
+          if ($validUsername) {
+              // if username is valid it is stored in a variable
+              $validUsername = $username->getUsername();
+              // query the dBase to check if username is duplicated
+              $dupUsername = new CheckUsername($validUsername);
+              $dup = $dupUsername->checkUsername();
+              // if username !exists in dBase ➞ continue validation process
+              if ($dup == false) {
+                  // email validation
+                  $validEmail = $email->validate();
+                  if ($validEmail) {
+                      $validEmail = $email->getEmail();
+                      // password validation
+                      $validPassword = $password->validate();
+                      if ($validPassword) { //@TODO create class to hash password allowing to extend to other protocols in the future
+                          $validPassword = $password->getPassword();
+                          $hashedPassword = md5($validPassword);
+                          // store user data
+                          $userData = new StoreUserData($validUsername, $validEmail, $hashedPassword);
+                          $storeData = $userData->storeData();
+                          if ($storeData) {
+                              // if uploaded ➞ move profilePic to /pics
+                              $pic = new StorePic($_FILES['pic']);
+                              $pic->storeProfilePic($validUsername);
+                              // start and setup session attributes
+                              session_start();
+                              $_SESSION['name'] = $validUsername;
+                              // redirect to index
+                              //header('Location: index.php');
+                          }
+                      }
+                  }
+              }
+          }
+      }
+   } catch (Exception $e) {
+      echo $e->getMessage();
+   }
 }
 
 ?>
@@ -65,7 +75,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
 <head>
    <meta charset="utf-8">
    <link rel="stylesheet" href="styles/styles.css">
-   <link rel="stylesheet" href="bootstrap.css">
+   <link rel="stylesheet" href="styles/bootstrap.css">
    <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Quicksand|Roboto+Condensed" rel="stylesheet">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
    <title> M3D | Registro </title>
@@ -82,7 +92,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
                <ul class="secondaryMenu">
                   <li><a href="#">STATS</a></li>
                   <li><a href="#">USER STORIES</a></li>
-                  <li><a href="contactForm.html">CONTACTO</a></li>
+                  <li><a href="contactform.html">CONTACTO</a></li>
                   <li><a href="faqs.html">FAQ's</a></li>
                </ul>
             </nav>

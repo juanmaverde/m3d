@@ -1,6 +1,6 @@
 <?php
-
 require_once 'classes/dBase/m3d_pdo.php';
+require_once "exceptions/username_exception.php";
 
 class CheckUsername
 {
@@ -20,7 +20,7 @@ class CheckUsername
 
         if (!empty($res))
         {
-            return true;
+            throw new UsernameException("el nombre de usuario ya existe en nuestra base de datos");
         } else {
             return false;
         }
@@ -37,4 +37,3 @@ class CheckUsername
 }
 
 ?>
-

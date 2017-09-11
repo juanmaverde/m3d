@@ -1,4 +1,5 @@
 <?php
+require_once '../exceptions/username_exception.php';
 
 class User
 {
@@ -12,9 +13,21 @@ class User
       return $this->username;
    }
 
-   public function setUsername($username) {
-      $this->username = $username;
+   public function compareUsername($inPut) {
+      if ($this->username == $inPut)
+      {
+         echo 'OK';
+      } else {
+         throw new UsernameException('ERROR YA', 1);
+      }
+
    }
 }
 
- ?>
+$us = new User;
+try {
+    $us->compareUsername('JMV');
+} catch (UsernameException $exception) {
+    echo $exception->getMessage();
+}
+?>

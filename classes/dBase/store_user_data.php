@@ -21,6 +21,7 @@ class StoreUserData
         $m3dPDO = new M3dPDO;
         $statement = $m3dPDO->prepare("INSERT INTO users (username, email, password) VALUES ('$this->username', '$this->email', '$this->password');");
         $statement->execute();
+        return true;
 
     }
 }

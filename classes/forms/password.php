@@ -51,29 +51,34 @@ class Password extends StringField
                   if ($resUpperCase) {
                      return true;
                   } else {
-                     throw new PasswordException("debe contener al menos una MAY", 25);
+                     throw new PasswordException("la contraseña debe contener al menos un caracter en mayúscula");
                   }
                } else {
-                  throw new PasswordException("debe contender al menos un caracter especial", 24);
+                  throw new PasswordException("la contraseña debe contener al menos un caracter especial");
                }
             } else {
-               throw new PasswordException("debe contender al menos un caracter especial", 23);
+               throw new PasswordException("la contraseña debe contener al menos un caracter especial");
             }
          } else {
-            throw new PasswordException("no debe contener espacios en blanco", 22);
+            throw new PasswordException("la contraseña no debe contener espacios en blanco");
          }
       } else {
-         throw new PasswordException("longitud incorrecta", 21);
+         throw new PasswordException("la longitud del campo de contraseña es incorrecta, debe contener como mínimo " . ' ' . '<strong>' . MinMax::MIN_LONG . '</strong>' . ' ' . 'y como máximo ' . '<strong>' . MinMax::MAX_LONG . '</strong>' . ' caracteres');
       }
+
    }
    public function getPassword()
    {
       return $this->password;
    }
+    public function checkSubmit()
+    {
+        if ($this->submit == true) {
+            return $this->submit;
+        } else {
+            throw new PasswordException("el campo de la contraseña debe ser completado");
+        }
+
+    }
 }
-//@FIXME manejo de los bloques de TRY & CATCH
-
-
-
-
 ?>
