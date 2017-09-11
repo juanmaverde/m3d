@@ -1,47 +1,59 @@
 <?php
 require_once 'classes/forms/form.php';
-
 require_once 'classes/forms/username.php';
 require_once 'classes/dBase/check_username.php';
 require_once 'classes/forms/email.php';
 require_once 'classes/forms/password.php';
-
 require_once 'classes/dBase/store_user_data.php';
+require_once 'store_profile_pic.php';
 
 // check if form already submitted
-var_dump($_REQUEST);
 $form = new Form($_REQUEST);
-$submittedForm = $form->checkSubmit(); // TRUE if submitted
-
-// download $_REQUEST data to variables
-$username = new Username($_REQUEST['username']);
-$email = new Email($_REQUEST['email']);
-$password = new Password($_REQUEST['password']);
-// username validation
-$validUsername = $username->validate(); // TRUE if valid || UsernameException if FALSE
-$validUsername = $username->getUsername();
-// if user is valid ➞ check if already exists in dBase
-$dupUsername = new CheckUsername($username->getUsername());
-$dup = $dupUsername->checkUsername();
-// if username !exists in dBase ➞ continue validation process
-// email validation
-$validEmail = $email->validate();
-$validEmail = $email->getEmail();
-// password validation
-$validPassword = $password->validate();
-// if all fields are valid ➞ hash password
-//@TODO create class to hash password allowing to extend to other protocols in the future
-$hashedPassword = md5($validPassword);
-// store user data
-$userData = new StoreUserData($validUsername, $validEmail, $hashedPassword);
-$userData->storeData();
-// if data stored without problems ➞ move uploaded pic as profile pic
-
-// start and setup session attributes
-session_start();
-$_SESSION['name'] = $validUsername;
-// redirect to index
-header('Location: index.php');
+if ($form->checkSubmit()) { // TRUE if submitted
+    // download $_REQUEST data to variables
+    $username = new Username($_REQUEST['username']);
+    $email = new Email($_REQUEST['email']);
+    $password = new Password($_REQUEST['password']);
+    // check if every field was filled
+    if ($username->checkSubmit() && $email->checkSubmit() && $password->checkSubmit()) {
+        // start validation process
+        // username validation
+        $validUsername = $username->validate(); // true | exception
+        if ($validUsername) {
+            // if username is valid it is stored in a variable
+            $validUsername = $username->getUsername();
+            // query the dBase to check if username is duplicated
+            $dupUsername = new CheckUsername($validUsername);
+            $dup = $dupUsername->checkUsername();
+            // if username !exists in dBase ➞ continue validation process
+            if ($dup == false) {
+                // email validation
+                $validEmail = $email->validate();
+                if ($validEmail) {
+                    $validEmail = $email->getEmail();
+                    // password validation
+                    $validPassword = $password->validate();
+                    if ($validPassword) { //@TODO create class to hash password allowing to extend to other protocols in the future
+                        $hashedPassword = md5($validPassword);
+                        // store user data
+                        $userData = new StoreUserData($validUsername, $validEmail, $hashedPassword);
+                        $storeData = $userData->storeData();
+                        // if uploaded ➞ move profilePic to /pics
+                        $pic = new StorePic($_FILES['pic']);
+                        $pic->storeProfilePic($validUsername);
+                        // start and setup session attributes
+                        session_start();
+                        $_SESSION['name'] = $validUsername;
+                        // redirect to index
+                        header('Location: index.php');
+                    }
+                }
+            }
+        }
+    }
+} else {
+    // ===>>> @TODO resolver como manejar en caso de que no hay enviado el formulario
+}
 
 ?>
 
