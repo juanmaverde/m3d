@@ -30,7 +30,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
               $validUsername = $username->getUsername();
               // query the dBase to check if username is duplicated
               $dupUsername = new CheckUsername($validUsername);
-              $dup = $dupUsername->checkUsername();
+              $dup = $dupUsername->checkDupUsername();
               // if username !exists in dBase ➞ continue validation process
               if ($dup == false) {
                   // email validation
@@ -53,18 +53,25 @@ if ($form->checkSubmit()) { // TRUE if submitted
                               session_start();
                               $_SESSION['name'] = $validUsername;
                               // redirect to index
-                              //header('Location: index.php');
+                              header('Location: index.php');
                           }
                       }
                   }
               }
           }
       }
+   } catch (FormException $e) {
+      echo 'Form Exception' . ' ' . $e->getMessage();
+   } catch (UsernameException $e) {
+      echo 'Username Exception' . ' ' . $e->getMessage();
+   } catch (EmailException $e) {
+      echo 'Email Exception' . ' ' . $e->getMessage();
+   } catch (PasswordException $e) {
+      echo 'Password Exception' . ' ' . $e->getMessage();
    } catch (Exception $e) {
       echo $e->getMessage();
    }
 }
-
 ?>
 
 <!--=========== HTML code from here ==========-->

@@ -1,5 +1,52 @@
 <?php
+require_once 'classes/forms/form.php';
+require_once 'classes/forms/username.php';
+require_once 'classes/dBase/check_username.php';
+require_once 'classes/forms/password.php';
 
+require_once 'exceptions/username_exception.php';
+require_once 'exceptions/password_exception.php';
+
+// check if form already submitted
+$form = new Form($_REQUEST);
+if ($form->checkSubmit()) { // TRUE if submitted
+   // download $_REQUEST to local scope
+   $username = new Username($_REQUEST['username']);
+   $password = new Password($_REQUEST['password']);
+   try {
+      // check if every field was filled
+      if ($username->checkSubmit() && $password->checkSubmit()) {
+         // validate username
+         $validUsername = $username->validate();
+         if ($validUsername) {
+            $validUsername = $username->getUsername();
+            // if username is valid -> query database
+            $matchUser = new CheckUsername($validUsername);
+            $userExists = $matchUser->CheckUser();
+             if ($userExists) {
+                 // hash typed password
+                 $typedPassword = $password->getPassword();
+                 $storedPassword = $matchUser->getStoredPassword();
+                 // compare dBase stored password with hashed typed password
+                 if (md5($typedPassword) == $storedPassword) {
+                     // if matches -> start session and setup $_SESSION data with lifeTime
+                     session_start();
+                     $_SESSION['id'] = $matchUser->getUserId();
+                     $_SESSION['name'] = $username->getUsername();
+                     // redirect to index.php
+                     header('location: index.php');
+                 }
+            }
+         }
+      }
+   } catch (UsernameException $e) {
+      echo $e->getMessage();
+   } catch (PasswordException $e) {
+       echo $e->getMessage();
+   } catch (Exception $e) {
+      echo $e->getMessage();
+   }
+}
 ?>
 
 <!--=========== HTML code from here ==========-->
@@ -45,10 +92,10 @@
          <p>Complete sus datos de ingreso</p>
          <div class="loginForm">
             <form action="login.php" method="post">
-               <input type="text" name="emailOrUsername" value="" placeholder="Nombre de usuario o Email">
+               <input type="text" name="username" value="" placeholder="Nombre de usuario">
                <input type="password" name="password" value="" placeholder="Contraseña">
                <label for="remember">Recordarme</label>
-               <input type="checkbox" name="remember" value="" checked>
+               <input type="checkbox" name="remember" value="remember" checked>
                <div class="submitContainer">
                   <input type="submit" name="submit" value="submit">
                </div>
