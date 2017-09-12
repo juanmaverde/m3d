@@ -5,10 +5,9 @@ require_once 'classes/dBase/check_username.php';
 require_once 'classes/forms/email.php';
 require_once 'classes/forms/password.php';
 require_once 'classes/dBase/store_user_data.php';
-require_once 'store_profile_pic.php';
+require_once 'classes/files/store_profile_pic.php';
 
 require_once 'exceptions/username_exception.php';
-require_once 'exceptions/min_max_exception.php';
 require_once 'exceptions/email_exception.php';
 require_once 'exceptions/password_exception.php';
 
@@ -48,7 +47,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
                           if ($storeData) {
                               // if uploaded ➞ move profilePic to /pics
                               $pic = new StorePic($_FILES['pic']);
-                              $pic->storeProfilePic($validUsername);
+                              $pic->storeProfilePic($validUsername); //@TODO quitar las UpperCase del nombre de archivo
                               // start and setup session attributes
                               session_start();
                               $_SESSION['name'] = $validUsername;

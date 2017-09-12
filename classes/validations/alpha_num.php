@@ -1,6 +1,5 @@
 <?php
 require_once 'validation.php';
-require_once 'exceptions/min_max_exception.php';
 
 class AlphaNum extends Validation
 {// returns TRUE if alphaNum

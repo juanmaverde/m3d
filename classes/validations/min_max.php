@@ -1,7 +1,5 @@
 <?php
 require_once 'validation.php';
-require_once 'exceptions/min_max_exception.php';
-
 
 class MinMax extends Validation
 {// returns TRUE if string more than 3 AND less than 21

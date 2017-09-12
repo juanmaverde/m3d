@@ -1,6 +1,5 @@
 <?php
 require_once 'validation.php';
-require_once 'exceptions/whitespace_exception.php';
 
 class Whitespace extends Validation
 {// returns TRUE if NO whitespaces
