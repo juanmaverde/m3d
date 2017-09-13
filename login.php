@@ -4,6 +4,7 @@ require_once 'classes/forms/username.php';
 require_once 'classes/dBase/check_username.php';
 require_once 'classes/forms/password.php';
 
+require_once 'exceptions/form_exception.php';
 require_once 'exceptions/username_exception.php';
 require_once 'exceptions/password_exception.php';
 
@@ -39,6 +40,8 @@ if ($form->checkSubmit()) { // TRUE if submitted
             }
          }
       }
+   } catch (FormException $e) {
+       echo $e->getMessage();
    } catch (UsernameException $e) {
       echo $e->getMessage();
    } catch (PasswordException $e) {
@@ -63,29 +66,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
 
 <body>
    <div>
-      <header class="largeHeaderContainer">
-         <div class="logoContainer">
-            <a href="index.php"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
-         </div>
-         <div class="secondaryMenuContainer">
-            <nav>
-               <ul class="secondaryMenu">
-                  <li><a href="#">STATS</a></li>
-                  <li><a href="#">USER STORIES</a></li>
-                  <li><a href="contactForm.html">CONTACTO</a></li>
-                  <li><a href="faqs.html">FAQ's</a></li>
-               </ul>
-            </nav>
-         </div>
-         <div class="mainMenuContainer">
-            <nav>
-               <ul class="mainMenu">
-                  <li><a href="register.php">CREAR CUENTA</a></li>
-                  <li><a href="login.php" class="mainMenuFavorite">INGRESO</a></li>
-               </ul>
-            </nav>
-         </div>
-      </header>
+      <?php include 'header.php'; ?>
    </div>
    <main>
       <div class="loginContainer">
@@ -110,9 +91,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
       </div>
 
    </main>
-   <div class="footerContainer">
-      <footer></footer>
-   </div>
+   <?php include 'footer.php'; ?>
 </body>
 
 </html>

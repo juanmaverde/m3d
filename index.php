@@ -18,31 +18,7 @@ session_start();
 </head>
 
 <body>
-   <div>
-      <header class="largeHeaderContainer">
-         <div class="logoContainer">
-            <a href="index.php"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
-         </div>
-         <div class="secondaryMenuContainer">
-            <nav>
-               <ul class="secondaryMenu">
-                  <li><a href="#">STATS</a></li>
-                  <li><a href="#">USER STORIES</a></li>
-                  <li><a href="contactForm.html">CONTACTO</a></li>
-                  <li><a href="faqs.html">FAQ's</a></li>
-               </ul>
-            </nav>
-         </div>
-         <div class="mainMenuContainer">
-            <nav>
-               <ul class="mainMenu">
-                  <li><a href="register.php">CREAR CUENTA</a></li>
-                  <li><a href="login.php" class="mainMenuFavorite">INGRESO</a></li>
-               </ul>
-            </nav>
-         </div>
-      </header>
-   </div>
+<?php include 'header.php'; ?>
    <main>
       <div class="mainScreenContainer">
          <div class="mottoContainer">
@@ -91,9 +67,7 @@ session_start();
 
       </div>
    </main>
-   <div class="footerContainer">
-      <footer></footer>
-   </div>
+<?php include 'footer.php';?>
 </body>
 
 </html>

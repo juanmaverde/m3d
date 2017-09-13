@@ -1,0 +1,1 @@
+<?php echo "<p> Copyright &copy; 2017 - " . date("Y") . ' ' . '<strong>' . " m3d.doctor" . '</strong>'; ?>

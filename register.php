@@ -1,4 +1,6 @@
 <?php
+require_once 'support.php';
+
 require_once 'classes/forms/form.php';
 require_once 'classes/forms/username.php';
 require_once 'classes/dBase/check_username.php';
@@ -7,17 +9,18 @@ require_once 'classes/forms/password.php';
 require_once 'classes/dBase/store_user_data.php';
 require_once 'classes/files/store_profile_pic.php';
 
+require_once 'exceptions/form_exception.php';
 require_once 'exceptions/username_exception.php';
 require_once 'exceptions/email_exception.php';
 require_once 'exceptions/password_exception.php';
 
 // check if form already submitted
-$form = new Form($_REQUEST);
+//--->>> support.php
 if ($form->checkSubmit()) { // TRUE if submitted
     // download $_REQUEST data to variables
-    $username = new Username($_REQUEST['username']);
-    $email = new Email($_REQUEST['email']);
-    $password = new Password($_REQUEST['password']);
+        $username = new Username($_REQUEST['username']);
+        $email = new Email($_REQUEST['email']);
+        $password = new Password($_REQUEST['password']);
     try {
       // check if every field was filled
       if ($username->checkSubmit() && $email->checkSubmit() && $password->checkSubmit()) {
@@ -89,29 +92,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
 
 <body>
    <div>
-      <header class="largeHeaderContainer">
-         <div class="logoContainer">
-            <a href="index.php"><img class="logo" src="imgs/logoFirstDraft.png" alt="logo" width="115px"></a>
-         </div>
-         <div class="secondaryMenuContainer">
-            <nav>
-               <ul class="secondaryMenu">
-                  <li><a href="#">STATS</a></li>
-                  <li><a href="#">USER STORIES</a></li>
-                  <li><a href="contactform.html">CONTACTO</a></li>
-                  <li><a href="faqs.html">FAQ's</a></li>
-               </ul>
-            </nav>
-         </div>
-         <div class="mainMenuContainer">
-            <nav>
-               <ul class="mainMenu">
-                  <li><a href="register.php">CREAR CUENTA</a></li>
-                  <li><a href="login.php" class="mainMenuFavorite">INGRESO</a></li>
-               </ul>
-            </nav>
-         </div>
-      </header>
+      <?php include 'header.php'?>
    </div>
    <main>
       <div class="registerContainer">
@@ -138,9 +119,7 @@ if ($form->checkSubmit()) { // TRUE if submitted
       </div>
 
    </main>
-   <div class="footerContainer">
-      <footer></footer>
-   </div>
+   <?php include 'footer.php';?>
 </body>
 
 </html>
