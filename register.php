@@ -82,44 +82,53 @@ if ($form->checkSubmit()) { // TRUE if submitted
 <html>
 
 <head>
-   <meta charset="utf-8">
-   <link rel="stylesheet" href="styles/styles.css">
-   <link rel="stylesheet" href="styles/bootstrap.css">
-   <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Quicksand|Roboto+Condensed" rel="stylesheet">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-   <title> M3D | Registro </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title> M3D | Registro </title>
 </head>
 
 <body>
-   <div>
-      <?php include 'header.php'?>
-   </div>
-   <main>
-      <div class="registerContainer">
-         <p>Complete los siguientes datos de registro para crear su cuenta:</p>
-            <form action="register.php" method="post" enctype="multipart/form-data">
-               <div class="registerForm">
-                  <input type="text" name="username" value="" placeholder="Nombre de usuario">
-                  <input type="email" name="email" value="" placeholder="Email">
-                  <input type="password" name="password" value="" placeholder="Contraseña">
-               <div class="pic">
-                  <input type="file" name="pic" value="">
-               </div>
-               </div>
-               <div class="submitContainer">
-                  <input type="submit" name="submit" value="submit">
-               </div>
+<div>
+<!--        --><?php //include 'header.php'?>
+</div>
+<main>
+    <div class="container">
+        <form action="register.php" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <form role="form">
+                        <h2>Registrate <small> y pertenece a nuestra comunidad en línea!</small></h2>
+                        <hr class="colorgraph">
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" class="form-control input-lg" placeholder="ingresa un nombre de usuario" tabindex="3">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-lg" placeholder="una casilla de correo válida" tabindex="4">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="tu contraseña" tabindex="5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                Haciendo click en <strong class="label label-primary">Registrarme</strong>, aceptás nuestros <a href="#" data-toggle="modal" data-target="#t_and_c_m">Términos y condiciones</a> así como el Uso de Cookies.
+                            </div>
+                        </div>
+                        <hr class="colorgraph">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-md-offset-3"><input type="submit" name="submit" value="registrarme" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             </form>
-      </div>
-      <div class="redirectToLogin">
-            <p>Ya tengo una cuenta, quiero ingresar!</p>
-         <div class="redirectToLoginLink">
-            <a href="login.php">Ingresar</a>
-         </div>
-      </div>
-
-   </main>
-   <?php include 'footer.php';?>
+    </div>
+</main>
+<!--    --><?php //include 'footer.php';?>
 </body>
 
 </html>
